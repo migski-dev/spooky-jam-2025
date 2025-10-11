@@ -23,7 +23,7 @@ func _ready() -> void:
 	else:
 		main = get_tree().get_first_node_in_group('main')
 		player = get_tree().get_first_node_in_group('player')
-		player.global_position = start_position.global_position
+		player.position = start_position.global_position
 
 func _on_area_3d_body_entered(body)-> void:
 	if main == null:
@@ -40,7 +40,8 @@ func _on_area_3d_body_entered(body)-> void:
 		call_deferred("play_end_cutscene") 
 
 func play_end_cutscene() -> void:
-	queue_free()
 	var cutscene = cutscene_packed.instantiate()
 	cutscene.scene_name = next_level_path
 	main.add_child(cutscene)
+	get_parent().queue_free()
+	
