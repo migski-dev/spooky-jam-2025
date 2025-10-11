@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://by6xr20bdj45e"]
+
+[ext_resource type="Script" uid="uid://2y5xls8wbgo7" path="res://autoload/camera_manager/camera_manager.gd" id="1_ggvje"]
+
+[node name="CameraManager" type="Node"]
+script = ExtResource("1_ggvje")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.801, -0.063)
+light_color = Color(1, 0.8901961, 0.33333334, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_size = 0.25
+light_specular = 0.15
+shadow_enabled = true
+shadow_bias = 1.657
+shadow_normal_bias = 2.206
+shadow_blur = 6.052
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 25.0
+spot_angle_attenuation = 0.176
