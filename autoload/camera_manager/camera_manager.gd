@@ -1,6 +1,8 @@
 extends Node
 
 signal transition_complete
+signal transition_start
+
 var tween: Tween
 @onready var camera3d: Camera3D = $Camera3D
 
@@ -18,6 +20,11 @@ func switch_camera(from, to) -> void:
 func transition_camera(from: Camera3D, to: Camera3D, duration: float = 1.0) -> void:
 	if transitioning: 
 		return
+		
+	transition_start.emit()	
+	$Camera3D/SpotLight3D.visible = true
+
+		
 	# Copy parameters of source camera
 	camera3d.fov = from.fov
 	camera3d.cull_mask = from.cull_mask
@@ -48,3 +55,4 @@ func transition_camera(from: Camera3D, to: Camera3D, duration: float = 1.0) -> v
 	to.current = true
 	transitioning = false
 	transition_complete.emit()
+	$Camera3D/SpotLight3D.visible = false

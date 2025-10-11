@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" uid="uid://2yx1jtw8efe0" path="res://scenes/interactables/interactable.gd" id="1_u3mly"]
 
-[node name="Interactable" type="Node3D"]
+[node name="Interactable" type="StaticBody3D"]
 script = ExtResource("1_u3mly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]

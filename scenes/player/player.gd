@@ -1,97 +1,87 @@
 class_name Player
 extends CharacterBody3D
 
-@export_category("Player")
-@export_range(1, 35, 1) var speed: float = 10  # m/s
-@export_range(10, 400, 1) var acceleration: float = 100  # m/s^2
+#Parameters -
+@export var SPEED = 5.0
+@export var MOUSE_SENSITIVITY = 0.003
 
-@export_range(0.1, 3.0, 0.1) var jump_height: float = 1  # m
-@export_range(0.1, 3.0, 0.1, "or_greater") var camera_sens: float = 1
+#local variables -
+var looking_at_interactable_object : bool = false
 
-var jumping: bool = false
-var mouse_captured: bool = false
+@onready var camera = $Camera3D
+@onready var flashlight = $Camera3D/SpotLight3D
 
-var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+func _ready():
+	CameraManager.transition_start.connect(_on_transition_start)
+	CameraManager.transition_complete.connect(_on_transition_end)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-var move_dir: Vector2  # Input direction for movement
-var look_dir: Vector2  # Input direction for look/aim
-
-var walk_vel: Vector3  # Walking velocity
-var grav_vel: Vector3  # Gravity velocity
-var jump_vel: Vector3  # Jumping velocity
-
-@onready var camera: Camera3D = $Camera3D
-
-
-func _ready() -> void:
-	capture_mouse()
-
-
-# func _unhandled_input
-func _input(event: InputEvent) -> void:
+func _input(event):
 	if event is InputEventMouseMotion:
-		look_dir = event.relative * 0.001
-		if mouse_captured:
-			_rotate_camera()
-	if Input.is_action_just_pressed("jump"):
-		jumping = true
+		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
+		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+		
+		if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+			return  # Don't process input when mouse is free
+		
+	#Keyboard Input	
+	if(Input.is_action_just_pressed("Flashlight")):
+		if(flashlight.visible == false):
+			flashlight.visible = true
+			#print("Player Flashlight enabled!")
+		else:
+			flashlight.visible = false
+			#print("Player Flashlight disabled!")
+			
+	if(Input.is_action_just_pressed("Interact")):
+		var space = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, global_position - global_transform.basis.z * 1000)
+		var result = space.intersect_ray(query)
+		
+		#Checks for Interactable Objects
+		if result and result.collider.has_signal("player_interaction"):
+			result.collider.emit_signal("player_interaction")
 
-
-func _physics_process(delta: float) -> void:
-	if mouse_captured:
-		_handle_joypad_camera_rotation(delta)
-	velocity = _walk(delta) + _gravity(delta) + _jump(delta)
+func _physics_process(_delta):
+	
+	#Mouse Input - Camera & Flashlight rotation
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	#Move Player
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = 0
+		velocity.z = 0
+	
+	#Make the Flashlight face the player's camera rotation
+	flashlight.rotation.x = camera.rotation.x
+	
+	#Player casts ray in front of them
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(global_position, global_position - global_transform.basis.z * 1000)
+	var result = space.intersect_ray(query)
+	
+	#Checks for Interactable Objects
+	if result and result.collider.has_signal("player_sees_object"):
+		result.collider.emit_signal("player_sees_object")
+	
 	move_and_slide()
 
+#When Player looks at an interactable object
+func show_interaction(text):
+	$UI/InteractionUI/Label.text = text
+	$UI/InteractionUI.visible = true
 
-func capture_mouse() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	mouse_captured = true
-
-
-func release_mouse() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	mouse_captured = false
-
-
-func _rotate_camera(sens_mod: float = 1.0) -> void:
-	camera.rotation.y -= look_dir.x * camera_sens * sens_mod
-	camera.rotation.x = clamp(camera.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
-
-
-func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void:
-	var joypad_dir: Vector2 = Input.get_vector("look_left", "look_right", "look_up", "look_down")
-	if joypad_dir.length() > 0:
-		look_dir += joypad_dir * delta
-		_rotate_camera(sens_mod)
-		look_dir = Vector2.ZERO
-
-
-func _walk(delta: float) -> Vector3:
-	move_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
-	var forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
-	var walk_dir: Vector3 = Vector3(forward.x, 0, forward.z).normalized()
-	walk_vel = walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
-	return walk_vel
-
-
-func _gravity(delta: float) -> Vector3:
-	grav_vel = (
-		Vector3.ZERO
-		if is_on_floor()
-		else grav_vel.move_toward(Vector3(0, velocity.y - gravity, 0), gravity * delta)
-	)
-	return grav_vel
-
-
-func _jump(delta: float) -> Vector3:
-	if jumping:
-		if is_on_floor():
-			jump_vel = Vector3(0, sqrt(4 * jump_height * gravity), 0)
-		jumping = false
-		return jump_vel
-	jump_vel = (
-		Vector3.ZERO if is_on_floor() else jump_vel.move_toward(Vector3.ZERO, gravity * delta)
-	)
-	return jump_vel
+#When Player stops looking at an interactable object
+func hide_interaction():
+	$UI/InteractionUI.visible = false
 	
+func _on_transition_start():
+	flashlight.visible = false
+
+func _on_transition_end():
+	camera.current = true
+	flashlight.visible = true

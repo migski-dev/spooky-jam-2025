@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bii2kmlu86c1r"]
 
 [ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/test.gdshader" id="1_dpxic"]
-[ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level.tscn" id="1_fpps7"]
+[ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="1_fpps7"]
 
 [sub_resource type="Environment" id="Environment_fpps7"]
 
@@ -14,20 +14,21 @@ size = Vector3(5, 5, 5)
 render_priority = 0
 shader = ExtResource("1_dpxic")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34e0g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpps7"]
 next_pass = SubResource("ShaderMaterial_fpps7")
 albedo_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gnttm"]
-material = SubResource("StandardMaterial3D_34e0g")
+material = SubResource("StandardMaterial3D_fpps7")
 size = Vector2(30, 30)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Level1" parent="." instance=ExtResource("1_fpps7")]
+[node name="LevelController" parent="." node_paths=PackedStringArray("end_trigger") instance=ExtResource("1_fpps7")]
+end_trigger = NodePath("../GameObjects/CSGBox3D/Area3D")
 
-[node name="StartPosition" parent="Level1" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6644053, 0.6695607, 0)
+[node name="StartPosition" parent="LevelController" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6644053, 1.5127156, 0)
 
 [node name="GameObjects" type="Node3D" parent="."]
 
@@ -50,50 +51,4 @@ shape = SubResource("WorldBoundaryShape3D_o2ih1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="GameObjects/StaticBody3D/CollisionShape3D"]
 mesh = SubResource("PlaneMesh_gnttm")
 
-[node name="R1" type="Node3D" parent="GameObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.471964)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="GameObjects/R1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46719122, 6.970049)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GameObjects/R1/CSGBox3D"]
-environment = SubResource("Environment_fpps7")
-
-[node name="Area3D" type="Area3D" parent="GameObjects/R1/CSGBox3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/R1/CSGBox3D/Area3D"]
-shape = SubResource("BoxShape3D_fpps7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameObjects/R1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/R1/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_o2ih1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GameObjects/R1/StaticBody3D/CollisionShape3D"]
-mesh = SubResource("PlaneMesh_gnttm")
-
-[node name="R2" type="Node3D" parent="GameObjects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.003302, 0, -23.471964)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="GameObjects/R2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46719122, 6.970049)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="GameObjects/R2/CSGBox3D"]
-environment = SubResource("Environment_fpps7")
-
-[node name="Area3D" type="Area3D" parent="GameObjects/R2/CSGBox3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/R2/CSGBox3D/Area3D"]
-shape = SubResource("BoxShape3D_fpps7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="GameObjects/R2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/R2/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_o2ih1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GameObjects/R2/StaticBody3D/CollisionShape3D"]
-mesh = SubResource("PlaneMesh_gnttm")
-
-[connection signal="body_entered" from="GameObjects/CSGBox3D/Area3D" to="." method="_on_area_3d_body_entered"]
-
-[editable path="Level1"]
+[editable path="LevelController"]

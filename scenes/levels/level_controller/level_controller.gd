@@ -6,6 +6,8 @@ class_name Level
 @export var next_level_path: String = "res://scenes/levels/test_level/test2.tscn"
 @export var camera_transition_time: float = 3
 @export var is_starting_level: bool = false
+# Change this to the correct trigger Node 
+@export var end_trigger: Area3D
 
 @export var main: Node3D
 @export var player: Player 
@@ -13,6 +15,9 @@ class_name Level
 @onready var start_position: Marker3D = $StartPosition
 
 func _ready() -> void: 
+	# Change body_entered to the correct signal from the end_trigger node
+	end_trigger.body_entered.connect(_on_area_3d_body_entered) 
+	
 	if is_starting_level:
 		return
 	else:
@@ -32,7 +37,6 @@ func _on_area_3d_body_entered(body)-> void:
 		# Transition the camera		
 		CameraManager.transition_camera(player.camera, transition_camera, camera_transition_time)
 		await CameraManager.transition_complete
-		player.camera.current = true
 		call_deferred("play_end_cutscene") 
 
 func play_end_cutscene() -> void:

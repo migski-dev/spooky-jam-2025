@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxanumufekf4w"]
 
-[ext_resource type="VideoStream" uid="uid://csvbu04633gf4" path="res://assets/videos/TEST_RESULT - Trim.ogv" id="1_iy06c"]
 [ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/test.gdshader" id="2_5eabr"]
+[ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="3_iy06c"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fjg6o"]
 
@@ -23,32 +23,31 @@ size = Vector2(30, 30)
 size = Vector3(5, 5, 5)
 
 [node name="Test2" type="Node3D"]
-metadata/_custom_type_script = "uid://bltmqjg13n5a3"
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("1_iy06c")
+[node name="LevelController" parent="." node_paths=PackedStringArray("end_trigger") instance=ExtResource("3_iy06c")]
+next_level_path = "res://scenes/levels/ian_test_level/ian_test.tscn"
+end_trigger = NodePath("../GameObjects/CSGBox3D/Area3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="GameObjects" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GameObjects"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_fjg6o")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameObjects/StaticBody3D/CollisionShape3D"]
 mesh = SubResource("PlaneMesh_ydadi")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="GameObjects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0072913, 6.970049)
 size = Vector3(1, 4.0802, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CSGBox3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameObjects/CSGBox3D"]
 environment = SubResource("Environment_avdig")
 
-[node name="Area3D" type="Area3D" parent="CSGBox3D"]
+[node name="Area3D" type="Area3D" parent="GameObjects/CSGBox3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameObjects/CSGBox3D/Area3D"]
 shape = SubResource("BoxShape3D_dabbu")
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7524476, 0)
+[editable path="LevelController"]
