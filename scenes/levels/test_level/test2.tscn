@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxanumufekf4w"]
+
+[ext_resource type="VideoStream" uid="uid://csvbu04633gf4" path="res://assets/videos/TEST_RESULT - Trim.ogv" id="1_iy06c"]
+[ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/test.gdshader" id="2_5eabr"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fjg6o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8ujo"]
+render_priority = 0
+shader = ExtResource("2_5eabr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw1g4"]
+next_pass = SubResource("ShaderMaterial_b8ujo")
+albedo_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ydadi"]
+material = SubResource("StandardMaterial3D_nw1g4")
+size = Vector2(30, 30)
+
+[sub_resource type="Environment" id="Environment_avdig"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dabbu"]
+size = Vector3(5, 5, 5)
+
+[node name="Test2" type="Node3D"]
+metadata/_custom_type_script = "uid://bltmqjg13n5a3"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_iy06c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_fjg6o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("PlaneMesh_ydadi")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0072913, 6.970049)
+size = Vector3(1, 4.0802, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CSGBox3D"]
+environment = SubResource("Environment_avdig")
+
+[node name="Area3D" type="Area3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Area3D"]
+shape = SubResource("BoxShape3D_dabbu")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7524476, 0)
