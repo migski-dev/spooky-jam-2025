@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://0n7cygdomhdi"]
+
+[ext_resource type="Script" uid="uid://824dl0r1fw42" path="res://scenes/scripts/gray_box_furniture.gd" id="1_4hdyg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fjnee"]
+
+[node name="GrayBox_Furniture" type="Node3D"]
+script = ExtResource("1_4hdyg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fjnee")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 0, 0)
+text = "TEST"
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.51, 0, 0)
+text = "TEST"
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.51)
+text = "TEST"
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.51)
+text = "TEST"
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -0.0017797947, 0.51, 0)
+text = "TEST"
+
+[node name="Label3D6" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -0.002, -0.51, 0)
+text = "TEST"

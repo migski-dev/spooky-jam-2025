@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://und7mwi6sufu"]
+
+[ext_resource type="Script" uid="uid://dghpkeihekyyr" path="res://scenes/boss_ai/boss_ai.gd" id="1_d6p25"]
+
+[node name="BossAi" type="CharacterBody3D"]
+script = ExtResource("1_d6p25")

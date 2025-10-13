@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgyfblco8ojer"]
+
+[ext_resource type="Script" uid="uid://fahbakfnfym8" path="res://scenes/interactables/door/door.gd" id="1_6jnl5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57sya"]
+size = Vector3(1, 2.048, 0.152)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70ylm"]
+albedo_color = Color(0.26666668, 0.14901961, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jnl5"]
+material = SubResource("StandardMaterial3D_70ylm")
+size = Vector3(1, 2, 0.125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jnl5"]
+albedo_color = Color(0.4509804, 0.44705883, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_57sya"]
+material = SubResource("StandardMaterial3D_6jnl5")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jnl5"]
+size = Vector3(1.5, 2, 2)
+
+[node name="Door" type="StaticBody3D"]
+script = ExtResource("1_6jnl5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511, -0.006, -0.001)
+shape = SubResource("BoxShape3D_57sya")
+
+[node name="Meshes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511, 0, 0)
+
+[node name="DoorBase" type="MeshInstance3D" parent="Meshes"]
+mesh = SubResource("BoxMesh_6jnl5")
+
+[node name="DoorKnob" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.403, -0.1, 0)
+mesh = SubResource("CylinderMesh_57sya")
+
+[node name="ActivationBound" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationBound"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48202622, 0, 0)
+shape = SubResource("BoxShape3D_6jnl5")
