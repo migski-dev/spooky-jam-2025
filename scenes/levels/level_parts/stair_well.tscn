@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=4 uid="uid://cqbr5ne034tbv"]
+
+[ext_resource type="PackedScene" uid="uid://qo4tjuhph8sp" path="res://assets/models/Free 3D Modular Game Assets For Prototyping/Pieces/stairs.fbx" id="1_lhow4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhow4"]
+size = Vector3(2.5, 2.8442383, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhow4"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lhow4"]
+points = PackedVector3Array(0.75, 0.5, 1, 0.75, -0.5, 1, 0.75, 0.5, -1, -0.75, 0.5, 1, -0.75, -0.5, 1, 0.75, -0.5, -1, -0.75, 0.5, -1, -0.75, -0.5, -1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c77dj"]
+size = Vector3(0.5, 5, 6.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mcmpx"]
+size = Vector3(0.5, 5, 2.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i6chm"]
+size = Vector3(0.5, 2.75, 2.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x6pku"]
+size = Vector3(0.5, 5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdj8v"]
+resource_name = "Material"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5wu7u"]
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -2.9802322e-10, 0.02, 0.01, 0.02),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgAEAAAABQAEAAIAAgAGAAUAAwAGAAIABAAFAAcABwAFAAYABgADAAcABwAAAAQAAwABAAgACAABAAAABwADAAkACAAJAAMACQAKAAcAAAAHAAoAAAALAAgACgALAAAADAAIAAsACQAIAAwADQALAAoACwANAAwACgAJAA4ADAAOAAkACgAPAA0ADAANAA8ADgAPAAoADwAOAAwA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("CtcjvE9O8K8K16M8CtcjvArXI7wK16M8CtcjvArXI7wAAAAACtejuwrXI7yPwnU8CtcjvE9O8C8AAAAACteju09OcC8K16OvCtejuwrXI7wK16OvCteju09OcK+PwnU8CtcjPArXI7wK16M8CtejOwrXI7yPwnU8CtejO09OcK+PwnU8CtcjPE9O8K8K16M8CtcjPArXI7wAAAAACtcjPE9O8C8AAAAACtejOwrXI7wK16OvCtejO09OcC8K16Ov")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r6vbn"]
+resource_name = "Cube_017"
+_surfaces = [{
+"aabb": AABB(-0.01, -0.01, -2.9802322e-10, 0.02, 0.01, 0.02),
+"attribute_data": PackedByteArray("YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9f3309g+BPP2DffT2D4E8/YN99PYLgTz9g3309g+BPP2DffT2D4E8/X999PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2C4E8/YN99PYPgTz9f3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP1/ffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2C4E8/YN99PYPgTz9g3309g+BPP1/ffT2D4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/YN99PYPgTz9g3309guBPP2DffT2C4E8/YN99PYPgTz9g3309g+BPP2DffT2D4E8/X999PYPgTz9g3309g+BPP1/ffT2D4E8/YN99PYPgTz9f3309g+BPP2DffT2D4E8/YN99PYLgTz9g3309g+BPPw=="),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQA"),
+"material": SubResource("StandardMaterial3D_gdj8v"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("CtcjvE9O8K8K16M8CtcjvArXI7wK16M8CtcjvArXI7wAAAAACtcjvE9O8C8AAAAACtcjPArXI7wK16M8CtcjvArXI7wK16M8CtcjvE9O8K8K16M8CtcjPE9O8K8K16M8CtcjPArXI7wAAAAACtcjPArXI7wK16M8CtcjPE9O8K8K16M8CtcjPE9O8C8AAAAACtejO09OcK+PwnU8CtejOwrXI7yPwnU8CtejOwrXI7wK16OvCtejO09OcC8K16OvCtcjvE9O8C8AAAAACteju09OcC8K16OvCteju09OcK+PwnU8CtcjvE9O8K8K16M8CtcjvArXI7wAAAAACtcjvArXI7wK16M8CtejuwrXI7yPwnU8CtejuwrXI7wK16OvCtcjvE9O8K8K16M8Cteju09OcK+PwnU8CtejO09OcK+PwnU8CtcjPE9O8K8K16M8CtcjPArXI7wK16M8CtejOwrXI7yPwnU8CtejuwrXI7yPwnU8CtcjvArXI7wK16M8CtcjPE9O8C8AAAAACtcjPE9O8K8K16M8CtejO09OcK+PwnU8CtejO09OcC8K16OvCtcjPArXI7wAAAAACtejOwrXI7wK16OvCtejOwrXI7yPwnU8CtcjPArXI7wK16M8Cteju09OcC8K16OvCtcjvE9O8C8AAAAACtcjvArXI7wAAAAACtejuwrXI7wK16OvCtejO09OcC8K16OvCtejOwrXI7wK16OvCtcjPArXI7wAAAAACtcjPE9O8C8AAAAACteju09OcK+PwnU8CtejuwrXI7yPwnU8CtejOwrXI7yPwnU8CtejO09OcK+PwnU8Cteju09OcK+PwnU8Cteju09OcC8K16OvCtejuwrXI7wK16OvCtejuwrXI7yPwnU8AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f/9/////P/9//3////8//3//f////z//f/9/////P////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f///////P/9///////8//3///////z//f///////P/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3///////z//f///////P/9///////8//3///////z//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////8//3///////z//f///////P/9///////8//38AAP///7//fwAA////v/9/AAD///+//38AAP///78AAP//////vwAA//////+/AAD//////78AAP//////v/////////+//////////7//////////v/////////+//////////7//////////v/////////+//////////7////9//38AgP///3///wAA////f/9/AID///9//38AgA==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5wu7u")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="stairs" parent="Walls" instance=ExtResource("1_lhow4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Stairs" parent="Walls/stairs" index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, -0.33166093, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/stairs"]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.9004643, 0.13889019, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/stairs/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9125798, 0.39105254, -0.11905202)
+shape = SubResource("BoxShape3D_lhow4")
+
+[node name="stairs2" parent="Walls" instance=ExtResource("1_lhow4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.00030821562, -1.471395, 1.4818844)
+
+[node name="Stairs" parent="Walls/stairs2" index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, -0.33166093, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/stairs2"]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.9004643, 0.13889019, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/stairs2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9125799, 0.33299565, -0.12864006)
+shape = SubResource("BoxShape3D_lhow4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18665183, 0.7515951, -1.7491894)
+mesh = SubResource("BoxMesh_lhow4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_lhow4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19816828, -1.9754283, 3.239012)
+mesh = SubResource("BoxMesh_lhow4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_lhow4")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8816518, 0, 3.325449e-07, 0, 1, 0, -8.98128e-08, 0, 1.1081079, -0.9827703, 0.6874155, 0.85397506)
+mesh = SubResource("BoxMesh_c77dj")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8816518, 0, 3.325449e-07, 0, 1, 0, -8.98128e-08, 0, 1.1081079, 0.96858776, 0.7401794, 0.77598345)
+mesh = SubResource("BoxMesh_mcmpx")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8816518, 0, 3.325449e-07, 0, 1, 0, -8.98128e-08, 0, 1.1081079, 0.9697064, 1.9053562, 2.7366533)
+mesh = SubResource("BoxMesh_i6chm")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.8538225e-08, 0, 1.1081079, 0, 1, 0, -0.8816518, 0, -4.8436934e-08, 0.0758, 0.7401794, -2.931472)
+mesh = SubResource("BoxMesh_x6pku")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.8538225e-08, 0, 1.1081079, 0, 1, 0, -0.8816518, 0, -4.8436934e-08, 0.09142655, 0.7401794, 4.4808936)
+mesh = SubResource("BoxMesh_x6pku")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-06, -42.86578, -4.371138e-06, 0, -1.8737228e-06, 99.99998, -100, 1.8737228e-06, 1.910685e-13, 0.7530935, 1.2416095, -1.739588)
+mesh = SubResource("ArrayMesh_r6vbn")
+skeleton = NodePath("")
+
+[node name="Door2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-06, -42.86578, -4.371138e-06, 0, -1.8737228e-06, 99.99998, -100, 1.8737228e-06, 1.910685e-13, 0.7530935, -1.4723333, 3.2976696)
+mesh = SubResource("ArrayMesh_r6vbn")
+skeleton = NodePath("")
+
+[editable path="Walls/stairs"]
+[editable path="Walls/stairs2"]

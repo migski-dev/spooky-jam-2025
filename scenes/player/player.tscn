@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ipohujquxte"]
+
+[ext_resource type="Script" uid="uid://b72a6qxj3qu8" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://bec3dmcyb8fn7" path="res://assets/textures/Test_InteractKey/E_key.png" id="2_dovo2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8afob"]
+height = 1.75
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_8afob")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23723191, 0.063)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12334937, -0.53779554)
+light_color = Color(1, 0.8901961, 0.33333334, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_size = 0.25
+light_specular = 0.15
+shadow_enabled = true
+shadow_bias = 1.657
+shadow_normal_bias = 2.206
+shadow_blur = 6.052
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 25.0
+spot_angle_attenuation = 0.176
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InteractionUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/InteractionUI"]
+layout_mode = 0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = -20.0
+texture = ExtResource("2_dovo2")
+
+[node name="Label" type="Label" parent="UI/InteractionUI"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = -20.0
+offset_right = 97.0
+offset_bottom = 10.0
+horizontal_alignment = 1
+vertical_alignment = 1
