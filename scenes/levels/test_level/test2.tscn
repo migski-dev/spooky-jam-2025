@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxanumufekf4w"]
 
-[ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/test.gdshader" id="2_5eabr"]
+[ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/alpha_video.gdshader" id="2_5eabr"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="3_iy06c"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fjg6o"]

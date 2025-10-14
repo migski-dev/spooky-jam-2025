@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=10 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="PackedScene" uid="uid://c0h5tto614wwn" path="res://scenes/levels/level_parts/long_hallway_with_bathroom.tscn" id="2_p70ti"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
 [ext_resource type="Environment" uid="uid://darq6kqqnsfge" path="res://resources/environment1.tres" id="5_xlana"]
 [ext_resource type="PackedScene" uid="uid://blkbhbwiajn46" path="res://scenes/boss_ai/mob.tscn" id="7_lfrea"]
+[ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="8_s32hy"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_wn3j4"]
 
@@ -53,4 +54,13 @@ bones/21/rotation = Quaternion(0.11986522, 0.006958111, -0.5032119, 0.85578126)
 bones/22/rotation = Quaternion(0.47490698, -0.39801687, 0.5052607, 0.600631)
 bones/23/rotation = Quaternion(0.25669596, 0.022829944, -0.0068767327, 0.966198)
 
+[node name="LevelController" parent="." node_paths=PackedStringArray("end_trigger") instance=ExtResource("8_s32hy")]
+next_level_path = "res://scenes/levels/test_level/test_space.tscn"
+is_starting_level = true
+end_trigger = NodePath("")
+
+[node name="Camera3D" parent="LevelController" index="0"]
+transform = Transform3D(0.999451, -0.004981823, 0.032755837, 0, 0.98863125, 0.15036057, -0.033132512, -0.150278, 0.9880885, -1.2539485, 0.9194217, -11.610072)
+
 [editable path="SJ25_LP_ANIM_V1"]
+[editable path="LevelController"]

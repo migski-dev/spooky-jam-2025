@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bdx4x7ygyd3oo"]
+[gd_scene load_steps=20 format=4 uid="uid://bdx4x7ygyd3oo"]
 
 [ext_resource type="PackedScene" uid="uid://0n7cygdomhdi" path="res://scenes/objects/gray_box_furniture.tscn" id="1_cppmt"]
 
@@ -7,6 +7,9 @@ size = Vector3(12, 0.25, 10)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h16oo"]
 data = PackedVector3Array(-6, 0.125, 5, 6, 0.125, 5, -6, -0.125, 5, 6, 0.125, 5, 6, -0.125, 5, -6, -0.125, 5, 6, 0.125, -5, -6, 0.125, -5, 6, -0.125, -5, -6, 0.125, -5, -6, -0.125, -5, 6, -0.125, -5, 6, 0.125, 5, 6, 0.125, -5, 6, -0.125, 5, 6, 0.125, -5, 6, -0.125, -5, 6, -0.125, 5, -6, 0.125, -5, -6, 0.125, 5, -6, -0.125, -5, -6, 0.125, 5, -6, -0.125, 5, -6, -0.125, -5, 6, 0.125, 5, -6, 0.125, 5, 6, 0.125, -5, -6, 0.125, 5, -6, 0.125, -5, 6, 0.125, -5, -6, -0.125, 5, 6, -0.125, 5, -6, -0.125, -5, 6, -0.125, 5, 6, -0.125, -5, -6, -0.125, -5)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_cppmt"]
+cell_height = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_e8krk"]
 size = Vector3(0.5, 2.5, 6)
@@ -120,125 +123,128 @@ mesh = SubResource("BoxMesh_kg5na")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_h16oo")
 
-[node name="Furniture" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_cppmt")
 
-[node name="GrayBox_Furniture" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="Furniture" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="GrayBox_Furniture" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(1.338261, 0, 0.9140681, 0, 1.5, 0, -1.4862896, 0, 0.82303053, 15.661037, 0.7161982, -5.418184)
 label_text = "TV"
 
-[node name="GrayBox_Furniture2" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture2" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 0.5, 16.252611, 0.7161982, -7.16014)
 label_text = "Speaker"
 
-[node name="GrayBox_Furniture3" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture3" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-3.278354e-08, 0, 0.5, 0, 1, 0, -0.75, 0, -2.1855694e-08, 13.880962, 0.6455804, -4.6609)
 label_text = "Speaker"
 
-[node name="GrayBox_Furniture30" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture30" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-3.278354e-08, 0, 0.5, 0, 1, 0, -0.75, 0, -2.1855694e-08, 1.1046795, 0.6311984, -12.699921)
 label_text = "Lamp"
 
-[node name="GrayBox_Furniture5" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture5" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(0.03999999, 0, 0, 0, 0.6, 0, 0, 0, 1.1999998, 16.76535, 1.3529816, -8.778816)
 label_text = "Painting"
 
-[node name="GrayBox_Furniture4" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture4" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 13.62287, 0.29299068, -9.41382)
 label_text = "Couch"
 
-[node name="GrayBox_Furniture11" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture11" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 10.195258, 0.63675094, -12.64797)
 label_text = "Bookcase"
 
-[node name="GrayBox_Furniture6" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture6" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-1.42062e-07, 0, 1, 0, 1, 0, -3.25, 0, -4.371139e-08, 11.634323, 0.29299068, -8.290116)
 label_text = "Couch"
 
-[node name="GrayBox_Furniture27" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture27" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-6.556708e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.371139e-08, 7.4385347, 0.29299068, -7.407723)
 label_text = "Table"
 
-[node name="GrayBox_Furniture9" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture9" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -5, 0, -4.371139e-08, 2.6909049, 0.39231896, -6.562458)
 label_text = "Galley Kitchen"
 
-[node name="GrayBox_Furniture15" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture15" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -5, 0, -4.371139e-08, 2.6909049, 2.5101619, -6.556133)
 label_text = "Galley Kitchen"
 
-[node name="GrayBox_Furniture16" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture16" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -5, 0, -4.371139e-08, -0.34618884, 2.5101619, -6.542968)
 label_text = "Galley Kitchen"
 
-[node name="GrayBox_Furniture7" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture7" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.425696, 0.29299068, -7.6445313)
 label_text = "Coffee Table"
 
-[node name="GrayBox_Furniture8" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture8" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.636324, 0.29299068, -5.537733)
 label_text = "Coffee Table"
 
-[node name="GrayBox_Furniture19" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture19" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 3.611765, 0.29299068, -5.140251)
 label_text = "Stool"
 
-[node name="GrayBox_Furniture20" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture20" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 3.611765, 0.29299068, -6.060493)
 label_text = "Stool"
 
-[node name="GrayBox_Furniture21" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture21" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 3.611765, 0.29299068, -6.9756947)
 label_text = "Stool"
 
-[node name="GrayBox_Furniture22" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture22" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 3.611765, 0.29299068, -7.911515)
 label_text = "Stool"
 
-[node name="GrayBox_Furniture23" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture23" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 8.497411, 0.29299068, -6.9756947)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture24" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture24" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 8.497411, 0.29299068, -7.911515)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture25" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture25" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 6.4556584, 0.29299068, -6.9756947)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture26" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture26" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 6.4556584, 0.29299068, -7.911515)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture28" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture28" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 7.4686723, 0.29299068, -8.643301)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture29" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture29" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 1, 0, -0.5, 0, -2.1855694e-08, 7.436338, 0.29299068, -6.1954145)
 label_text = "Chair"
 
-[node name="GrayBox_Furniture17" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture17" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.397921, 0.39065802, -4.5797386)
 label_text = "Dishwasher"
 
-[node name="GrayBox_Furniture18" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture18" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.397921, 0.39065802, -5.5747023)
 label_text = "Sink"
 
-[node name="GrayBox_Furniture10" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture10" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 0.85, 0, 1, 0, -1, 0, -3.715468e-08, -0.2909135, 0.29299068, -4.5540533)
 label_text = "Counter Top"
 
-[node name="GrayBox_Furniture12" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture12" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 0.85, 0, 2, 0, -1, 0, -3.715468e-08, -0.2909135, 1.0208805, -8.5542755)
 label_text = "Fridge"
 
-[node name="GrayBox_Furniture13" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture13" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-4.371139e-08, 0, 0.85, 0, 1, 0, -1, 0, -3.715468e-08, -0.2909135, 0.29299068, -5.552746)
 label_text = "Oven"
 
-[node name="GrayBox_Furniture14" parent="Furniture" instance=ExtResource("1_cppmt")]
+[node name="GrayBox_Furniture14" parent="NavigationRegion3D/Furniture" instance=ExtResource("1_cppmt")]
 transform = Transform3D(-8.742278e-08, 0, 0.85, 0, 1, 0, -2, 0, -3.715468e-08, -0.2909135, 0.29299068, -7.045455)
 label_text = "CounterTop"
 

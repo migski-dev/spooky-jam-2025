@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bii2kmlu86c1r"]
 
-[ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/test.gdshader" id="1_dpxic"]
+[ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/alpha_video.gdshader" id="1_dpxic"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="1_fpps7"]
 
 [sub_resource type="Environment" id="Environment_fpps7"]

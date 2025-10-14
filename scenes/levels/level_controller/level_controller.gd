@@ -19,7 +19,8 @@ func _ready() -> void:
 	end_trigger.body_entered.connect(_on_area_3d_body_entered) 
 	
 	if is_starting_level:
-		return
+		main = get_tree().get_first_node_in_group('main')
+		player = get_tree().get_first_node_in_group('player')
 	else:
 		main = get_tree().get_first_node_in_group('main')
 		player = get_tree().get_first_node_in_group('player')
