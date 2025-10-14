@@ -1,21 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=9 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="PackedScene" uid="uid://c0h5tto614wwn" path="res://scenes/levels/level_parts/long_hallway_with_bathroom.tscn" id="2_p70ti"]
 [ext_resource type="PackedScene" uid="uid://bdx4x7ygyd3oo" path="res://scenes/levels/level_parts/living_room.tscn" id="3_p70ti"]
 [ext_resource type="PackedScene" uid="uid://bb4dpuq7pvlyt" path="res://scenes/levels/level_parts/front_hall.tscn" id="4_fuxs2"]
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
-
-[sub_resource type="Environment" id="Environment_fuxs2"]
-background_mode = 1
-background_color = Color(0.23822501, 0.24604464, 0.2881046, 1)
-tonemap_exposure = 0.25
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.272326, 0.298018, 0.338405, 1)
-fog_density = 1.0
-fog_depth_begin = 2.0
-fog_depth_end = 20.0
+[ext_resource type="Environment" uid="uid://darq6kqqnsfge" path="res://resources/environment1.tres" id="5_xlana"]
+[ext_resource type="PackedScene" uid="uid://blkbhbwiajn46" path="res://scenes/boss_ai/mob.tscn" id="7_lfrea"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_wn3j4"]
 
@@ -34,8 +25,32 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.0
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, 0, -11.170843)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fuxs2")
+environment = ExtResource("5_xlana")
 camera_attributes = SubResource("CameraAttributesPhysical_wn3j4")
 
 [node name="Node3D" parent="." instance=ExtResource("5_wn3j4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.861929, -1.1250739, -19.75122)
+
+[node name="SJ25_LP_ANIM_V1" parent="." instance=ExtResource("7_lfrea")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.3593785, 0.10698348, -8.443833)
+
+[node name="Skeleton3D" parent="SJ25_LP_ANIM_V1/Armature" index="0"]
+bones/0/position = Vector3(-6.740212, 2.3246684, -160.90712)
+bones/0/rotation = Quaternion(-0.6470262, -0.30733463, 0.5825033, 0.3841778)
+bones/1/rotation = Quaternion(-0.07844043, 0.098021105, -0.3467688, 0.9295109)
+bones/2/rotation = Quaternion(-0.055814084, 0.034019455, -0.06386212, 0.9958159)
+bones/3/rotation = Quaternion(-0.054639325, 0.03528419, -0.06324975, 0.995876)
+bones/8/rotation = Quaternion(0.009153141, -0.5803333, 0.26763105, 0.76909244)
+bones/9/rotation = Quaternion(-0.09494586, -0.4780511, 0.8305997, 0.26936325)
+bones/12/rotation = Quaternion(0.19479544, 0.8131496, -0.07387212, -0.54349375)
+bones/13/rotation = Quaternion(0.10365339, 0.4763621, 0.82677895, 0.28066316)
+bones/15/rotation = Quaternion(0.038809642, -0.2159301, 0.97562766, 0.0043236017)
+bones/16/rotation = Quaternion(0.031523075, -0.04573253, -0.49314573, 0.86817175)
+bones/17/rotation = Quaternion(0.47973716, -0.58943594, 0.42722225, 0.4897946)
+bones/18/rotation = Quaternion(0.24001694, -0.01563053, 0.0041907285, 0.9706339)
+bones/20/rotation = Quaternion(-0.12759134, 0.1024899, 0.9848198, 0.057846207)
+bones/21/rotation = Quaternion(0.11986522, 0.006958111, -0.5032119, 0.85578126)
+bones/22/rotation = Quaternion(0.47490698, -0.39801687, 0.5052607, 0.600631)
+bones/23/rotation = Quaternion(0.25669596, 0.022829944, -0.0068767327, 0.966198)
+
+[editable path="SJ25_LP_ANIM_V1"]
