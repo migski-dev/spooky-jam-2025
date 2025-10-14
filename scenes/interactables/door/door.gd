@@ -19,7 +19,6 @@ func _ready():
 	player_sees_object.connect(on_player_display_ui)
 	player_interaction.connect(on_interaction_activated)
 
-
 #
 func _physics_process(_delta: float) -> void:
 	pass
@@ -32,7 +31,9 @@ func on_interaction_activated():
 		self.global_rotation.y += open_degrees
 		activated = true
 		hint_text = "Close Door"
+		player_ref.show_interaction(hint_text)
 	else:
 		self.global_rotation.y -= open_degrees
 		activated = false
 		hint_text = "Open Door"
+		player_ref.show_interaction(hint_text)

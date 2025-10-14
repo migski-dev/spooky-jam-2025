@@ -5,19 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bdx4x7ygyd3oo" path="res://scenes/levels/level_parts/living_room.tscn" id="3_p70ti"]
 [ext_resource type="PackedScene" uid="uid://bb4dpuq7pvlyt" path="res://scenes/levels/level_parts/front_hall.tscn" id="4_fuxs2"]
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
-
-[sub_resource type="Environment" id="Environment_fuxs2"]
-background_mode = 1
-background_color = Color(0.23822501, 0.24604464, 0.2881046, 1)
-tonemap_exposure = 0.25
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.272326, 0.298018, 0.338405, 1)
-fog_density = 1.0
-fog_depth_begin = 2.0
-fog_depth_end = 20.0
-
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_wn3j4"]
+[ext_resource type="PackedScene" uid="uid://dox26qb6ud42q" path="res://scenes/levels/level_parts/storage_room.tscn" id="6_xlana"]
+[ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
 
 [node name="StartingLevel" type="Node3D"]
 
@@ -33,9 +22,11 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.0
 [node name="FrontHall" parent="." instance=ExtResource("4_fuxs2")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, 0, -11.170843)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fuxs2")
-camera_attributes = SubResource("CameraAttributesPhysical_wn3j4")
+[node name="StairWell" parent="." instance=ExtResource("5_wn3j4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.861929, -1.2979643, -19.75122)
 
-[node name="Node3D" parent="." instance=ExtResource("5_wn3j4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.861929, -1.1250739, -19.75122)
+[node name="StorageRoom" parent="." instance=ExtResource("6_xlana")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.135832, -2.896861, -18.42585)
+
+[node name="JunctionRoom" parent="." instance=ExtResource("7_lfrea")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.694659, -2.9583678, -9.4564905)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://dox26qb6ud42q"]
+
+[ext_resource type="PackedScene" uid="uid://0n7cygdomhdi" path="res://scenes/objects/gray_box_furniture.tscn" id="1_lby41"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sk5x8"]
+size = Vector3(10, 0.25, 12)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lby41"]
+data = PackedVector3Array(-5, 0.125, 6, 5, 0.125, 6, -5, -0.125, 6, 5, 0.125, 6, 5, -0.125, 6, -5, -0.125, 6, 5, 0.125, -6, -5, 0.125, -6, 5, -0.125, -6, -5, 0.125, -6, -5, -0.125, -6, 5, -0.125, -6, 5, 0.125, 6, 5, 0.125, -6, 5, -0.125, 6, 5, 0.125, -6, 5, -0.125, -6, 5, -0.125, 6, -5, 0.125, -6, -5, 0.125, 6, -5, -0.125, -6, -5, 0.125, 6, -5, -0.125, 6, -5, -0.125, -6, 5, 0.125, 6, -5, 0.125, 6, 5, 0.125, -6, -5, 0.125, 6, -5, 0.125, -6, 5, 0.125, -6, -5, -0.125, 6, 5, -0.125, 6, -5, -0.125, -6, 5, -0.125, 6, 5, -0.125, -6, -5, -0.125, -6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lby41"]
+size = Vector3(0.5, 2.5, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qt3aa"]
+size = Vector3(0.5, 2.5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5iv0"]
+size = Vector3(0.5, 2.5, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ejab4"]
+size = Vector3(0.5, 2.5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3qd2"]
+size = Vector3(0.5, 2.5, 2)
+
+[node name="StorageRoom" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_sk5x8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_lby41")
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="GrayBox_Furniture" parent="Objects" instance=ExtResource("1_lby41")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.2128968, -0.28288794)
+label_text = "Shelves"
+
+[node name="GrayBox_Furniture2" parent="Objects" instance=ExtResource("1_lby41")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.2128968, 2.4052138)
+label_text = "Shelves"
+
+[node name="GrayBox_Furniture3" parent="Objects" instance=ExtResource("1_lby41")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.2128968, -3.1784794)
+label_text = "Shelves"
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1538343, 1.1613748, -0.03397274)
+mesh = SubResource("BoxMesh_lby41")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22739, 1.1613748, 2.9592128)
+mesh = SubResource("BoxMesh_qt3aa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.070288, 1.1613748, 5.7495785)
+mesh = SubResource("BoxMesh_e5iv0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.08508992, 1.1613748, -6.2326055)
+mesh = SubResource("BoxMesh_ejab4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.917012, 1.1613748, 5.7495785)
+mesh = SubResource("BoxMesh_l3qd2")

@@ -9,6 +9,7 @@ var player_looking_at_object : bool = false
 var hint_displayed : bool = false
 var activated : bool = false
 var player_ref : Player
+var stop_interacting = false
 
 #Signals
 signal player_sees_object
@@ -34,12 +35,12 @@ func _physics_process(_delta: float) -> void:
 
 func on_body_entered(body):
 	if body.is_in_group("player"):
-		print("BODY ENTERED")
+		#print("BODY ENTERED")
 		player_in_bounds = true
 		
 func on_body_exited(body):
 	if body.is_in_group("player"):
-		print("BODY EXITED")
+		#print("BODY EXITED")
 		player_in_bounds = false
 		if(hint_displayed):
 			player_ref.hide_interaction()
@@ -62,12 +63,12 @@ func on_player_display_ui():
 	if player_ref == null:
 			player_ref = get_tree().get_first_node_in_group("player")
 	
-	if player_ref:
+	if player_ref && stop_interacting == false:
 		if(player_in_bounds):
 			#print("showing player ui...")
 			if(!hint_displayed):
 				player_ref.show_interaction(hint_text)
 				hint_displayed = true
 		else:
-			print("Player reference cannot be found by " + self.name + "_ready() method!")
+			#print("Player reference cannot be found by " + self.name + "_ready() method!")
 			return

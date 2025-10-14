@@ -301,11 +301,6 @@ transform = Transform3D(100, 0, 0, 0, -5.1099996e-06, 99.99998, 0, -42.86578, -1
 mesh = SubResource("ArrayMesh_xh6qh")
 skeleton = NodePath("")
 
-[node name="Door2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.371139e-06, -42.86578, -4.371138e-06, 0, -1.8737228e-06, 99.99998, -100, 1.8737228e-06, 1.910685e-13, -1.1427765, 0, -11.744516)
-mesh = SubResource("ArrayMesh_xh6qh")
-skeleton = NodePath("")
-
 [node name="Window" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-06, -99.99999, -4.3711384e-06, 0, -4.3711384e-06, 99.99999, -100, 4.3711384e-06, 1.9106853e-13, 16.75945, -0.04604888, -10.604883)
 mesh = SubResource("ArrayMesh_ejtxp")
