@@ -16,7 +16,7 @@ class_name Level
 
 func _ready() -> void: 
 	# Change body_entered to the correct signal from the end_trigger node
-	end_trigger.body_entered.connect(_on_area_3d_body_entered) 
+	#end_trigger.body_entered.connect(_on_area_3d_body_entered) 
 	
 	if is_starting_level:
 		main = get_tree().get_first_node_in_group('main')

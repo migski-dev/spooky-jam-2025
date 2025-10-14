@@ -26,6 +26,12 @@ window/size/viewport_height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "red"
+}
+
 [filesystem]
 
 import/blender/enabled=false

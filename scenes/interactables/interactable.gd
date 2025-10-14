@@ -3,6 +3,7 @@ extends StaticBody3D
 
 #Interactable Object Parameters
 @export var hint_text = "[Set a hint text on the IO child]"
+var stop_interacting: bool = false
 
 var player_in_bounds : bool = false
 var player_looking_at_object : bool = false
@@ -62,12 +63,12 @@ func on_player_display_ui():
 	if player_ref == null:
 			player_ref = get_tree().get_first_node_in_group("player")
 	
-	if player_ref:
+	if player_ref and (stop_interacting == false):
 		if(player_in_bounds):
 			#print("showing player ui...")
 			if(!hint_displayed):
 				player_ref.show_interaction(hint_text)
 				hint_displayed = true
 		else:
-			print("Player reference cannot be found by " + self.name + "_ready() method!")
+			#print("Player reference cannot be found by " + self.name + "_ready() method!")
 			return

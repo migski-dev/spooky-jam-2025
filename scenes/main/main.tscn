@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8gusbff3r4ug"]
+[gd_scene load_steps=7 format=3 uid="uid://c8gusbff3r4ug"]
 
 [ext_resource type="Script" uid="uid://c2cbfumtyft3d" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://c1ipohujquxte" path="res://scenes/player/player.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://cy75vrx8pjfbq" path="res://scenes/levels/starting_level/starting_level.tscn" id="3_k2fmo"]
+[ext_resource type="Environment" uid="uid://darq6kqqnsfge" path="res://resources/environment1.tres" id="4_6q06x"]
 [ext_resource type="Shader" uid="uid://v76cdnq4ep7g" path="res://shaders/ps_shader.gdshader" id="4_l3cfh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6q06x"]
 shader = ExtResource("4_l3cfh")
+shader_parameter/viewport_size = Vector2(640, 480)
+shader_parameter/virtual_resolution = Vector2(320, 240)
 
 [node name="Main" type="Node3D" groups=["main"]]
 script = ExtResource("1_k2fmo")
@@ -15,6 +18,9 @@ script = ExtResource("1_k2fmo")
 transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -0.952023, 0.3018685, 0.5662919)
 
 [node name="StartingLevel" parent="." instance=ExtResource("3_k2fmo")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_6q06x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
