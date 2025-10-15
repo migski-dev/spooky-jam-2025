@@ -15,7 +15,7 @@ shader_parameter/virtual_resolution = Vector2(320, 240)
 script = ExtResource("1_k2fmo")
 
 [node name="Player" parent="." instance=ExtResource("2_iuonh")]
-transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -0.952023, 0.3018685, 0.5662919)
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 9.947342, 0.3018685, -19.794039)
 
 [node name="StartingLevel" parent="." instance=ExtResource("3_k2fmo")]
 
