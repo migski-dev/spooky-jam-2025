@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqh1s5mat22da"]
+
+[ext_resource type="PackedScene" uid="uid://bhm4m2mc2oohs" path="res://assets/models/pc/PC.glb" id="1_2al0r"]
+
+[node name="PC2" instance=ExtResource("1_2al0r")]

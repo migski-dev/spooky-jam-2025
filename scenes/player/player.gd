@@ -16,7 +16,8 @@ var looking_at_interactable_object : bool = false
 func _ready():
 	CameraManager.transition_start.connect(_on_transition_start)
 	CameraManager.transition_complete.connect(_on_transition_end)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	flashlight.visible = false
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):
 	if Input.mouse_mode == Input.MouseMode.MOUSE_MODE_CAPTURED:
