@@ -12,7 +12,7 @@ func _ready():
 	hint_text = "Open Electrical Panel"
 	
 	#get memory reference to player
-	player_ref = get_tree().get_first_node_in_group("player")
+	player_ref = get_tree().get_first_node_in_group("Player")
 	
 	#Player Interaction Bound
 	$ActivationBound.body_entered.connect(on_body_entered)
@@ -45,4 +45,7 @@ func on_interaction_activated():
 			stop_interacting = true
 			hint_text = ""
 			player_ref.show_interaction(hint_text)
+			activation_stage = 3
+		3:
+			return
 		

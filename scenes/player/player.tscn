@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c753ubucfcogs" path="res://scenes/ui/hint_ui/hint_ui.tscn" id="6_75vfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8afob"]
-height = 1.75
+radius = 0.49975586
+height = 0.9995117
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
 shader = ExtResource("3_lvxji")
@@ -20,10 +21,11 @@ shader_parameter/fade_amount = 0.0
 script = ExtResource("1_8afob")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37524414, 0)
 shape = SubResource("CapsuleShape3D_8afob")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23723191, 0.063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35420495, 0.063)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2272942, -0.53779554)
@@ -65,8 +67,22 @@ grow_vertical = 2
 stream = ExtResource("4_p47bc")
 autoplay = true
 
-[node name="TextureRect" type="TextureRect" parent="UI/InteractionUI"]
+[node name="InteracableObjectUI" type="Control" parent="UI"]
 visible = false
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -80.0
+offset_right = 20.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/InteracableObjectUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,13 +91,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_dovo2")
 
-[node name="Label" type="Label" parent="UI/InteractionUI"]
-visible = false
+[node name="Label" type="Label" parent="UI/InteracableObjectUI"]
 layout_mode = 0
-offset_left = -54.0
-offset_top = -20.0
-offset_right = 97.0
-offset_bottom = 10.0
+offset_left = -56.0
+offset_top = 39.0
+offset_right = 94.0
+offset_bottom = 62.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://fahbakfnfym8" path="res://scenes/interactables/door/door.gd" id="1_6jnl5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_57sya"]
-size = Vector3(1, 2.048, 0.152)
+size = Vector3(1.4663696, 2.048, 0.152)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70ylm"]
 albedo_color = Color(0.26666668, 0.14901961, 0, 1)
@@ -28,11 +28,11 @@ size = Vector3(1.5, 2, 2)
 script = ExtResource("1_6jnl5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511, -0.006, -0.001)
+transform = Transform3D(0.75, 0, 0, 0, 0.85, 0, 0, 0, 0.75, -0.5096496, -0.006, -0.001)
 shape = SubResource("BoxShape3D_57sya")
 
 [node name="Meshes" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.511, 0, 0)
+transform = Transform3D(1.15, 0, 0, 0, 0.863, 0, 0, 0, 1.15, -0.511, 0, 0)
 
 [node name="DoorBase" type="MeshInstance3D" parent="Meshes"]
 mesh = SubResource("BoxMesh_6jnl5")
@@ -42,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.4
 mesh = SubResource("CylinderMesh_57sya")
 
 [node name="ActivationBound" type="Area3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.11960423, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationBound"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48202622, 0, 0)

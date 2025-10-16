@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cyprqmsxw6d31"]
 
-[ext_resource type="Script" uid="uid://b46o8hc5uwx7n" path="res://scenes/interactables/electrical_panel/electrical_panel.gd" id="1_ux3gw"]
+[ext_resource type="Script" uid="uid://bev5dwspp11bi" path="res://scenes/interactables/electrical_panel/electrical_panel.gd" id="1_ux3gw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ux3gw"]
 size = Vector3(0.125, 1, 0.75)

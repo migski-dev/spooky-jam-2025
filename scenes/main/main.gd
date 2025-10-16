@@ -14,13 +14,11 @@ func _notification(what: int) -> void:
 		NOTIFICATION_APPLICATION_FOCUS_OUT:
 			window_has_focus = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			print("NOPE!")
 			
 		NOTIFICATION_APPLICATION_FOCUS_IN:
 			if in_main_menu == false:
 				window_has_focus = true
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				print("YEP!")
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
