@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 #Parameters -
-@export var SPEED = 3.0
+@export var SPEED = 1.7
 @export var MOUSE_SENSITIVITY = 0.003
 const MIN_CAMERA_X_PITCH = deg_to_rad(-80)
 const MAX_CAMERA_X_PITCH = deg_to_rad(80)
@@ -12,11 +12,16 @@ var looking_at_interactable_object : bool = false
 
 @onready var camera = $Camera3D
 @onready var flashlight = $SpotLight3D
+@onready var hint_ui = $UI/HintUI
+
+var turned_on_flashlight = false
 
 func _ready():
 	CameraManager.transition_start.connect(_on_transition_start)
 	CameraManager.transition_complete.connect(_on_transition_end)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	SignalBus.on_game_start.connect(_on_game_start)
+	flashlight.visible = false
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):
 	if Input.mouse_mode == Input.MouseMode.MOUSE_MODE_CAPTURED:
@@ -31,6 +36,11 @@ func _input(event):
 			
 		#Keyboard Input	
 		if(Input.is_action_just_pressed("Flashlight")):
+			if(turned_on_flashlight == false):
+				turned_on_flashlight = true
+				hint_ui.display_hint("Movement", "WASD")
+				
+				
 			if(flashlight.visible == false):
 				flashlight.visible = true
 				#print("Player Flashlight enabled!")
@@ -93,3 +103,6 @@ func _on_transition_start():
 func _on_transition_end():
 	camera.current = true
 	flashlight.visible = true
+	
+func _on_game_start():
+	hint_ui.display_hint("Flashlight", "Press F to toggle")

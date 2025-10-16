@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://wishy0tw4j76"]
+
+[ext_resource type="Shader" uid="uid://dlrfv57dcgadr" path="res://shaders/pause_menu.gdshader" id="1_fuogq"]
+[ext_resource type="Script" uid="uid://cpiasnm7nom8x" path="res://scenes/ui/main_menu/main_menu_canvas_layer.gd" id="1_gopm1"]
+[ext_resource type="Script" uid="uid://7rctxmhf771x" path="res://scenes/ui/main_menu/menuUI.gd" id="2_544lk"]
+[ext_resource type="Script" uid="uid://xaoru4uh0x3p" path="res://scenes/ui/main_menu/menuControl.gd" id="3_h0rij"]
+[ext_resource type="FontFile" uid="uid://bw0utxhg55pod" path="res://assets/fonts/Newsreader_60pt-ExtraLight.ttf" id="4_gopm1"]
+[ext_resource type="AudioStream" uid="uid://33u7j1oi74xo" path="res://assets/bgm/v2 Horror Jam Main Menu.ogg" id="5_544lk"]
+[ext_resource type="PackedScene" uid="uid://becdk23vwtbj1" path="res://scenes/ui/settings_menu/settings.tscn" id="5_h0rij"]
+[ext_resource type="AudioStream" uid="uid://ce4bd668uwdby" path="res://assets/sfx/power-down-45784.ogg" id="8_wbqph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nm12e"]
+shader = ExtResource("1_fuogq")
+shader_parameter/amount = 5.0
+
+[node name="MainMenuCanvasLayer" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_gopm1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nm12e")
+use_parent_material = true
+offset_top = -80.0
+offset_right = 640.0
+offset_bottom = 560.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+stretch = true
+script = ExtResource("2_544lk")
+
+[node name="SubViewport" type="SubViewport" parent="AspectRatioContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 640)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="AspectRatioContainer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.6856383, 1.463085, 1.5289761)
+current = true
+
+[node name="Menu" type="Control" parent="AspectRatioContainer/SubViewportContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_h0rij")
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/SubViewportContainer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.864418
+offset_right = 32.86444
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_gopm1")
+theme_override_font_sizes/font_size = 48
+text = "SPOOKY GAME"
+
+[node name="PlayButton" type="Button" parent="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_gopm1")
+theme_override_font_sizes/font_size = 32
+text = "Play
+"
+
+[node name="SettingsButton" type="Button" parent="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_gopm1")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Settings" parent="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer" instance=ExtResource("5_h0rij")]
+visible = false
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_544lk")
+autoplay = true
+
+[node name="PowerOutagePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wbqph")
+
+[connection signal="pressed" from="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings/MarginContainer/VBoxContainer2/HBoxContainer/Back" to="." method="_on_settings_back_pressed"]
+
+[editable path="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings"]
