@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bns1n7jbgbefu"]
+
+[ext_resource type="PackedScene" uid="uid://qo4tjuhph8sp" path="res://assets/models/Free 3D Modular Game Assets For Prototyping/Pieces/stairs.fbx" id="1_nn3t6"]
+
+[node name="stairs" instance=ExtResource("1_nn3t6")]

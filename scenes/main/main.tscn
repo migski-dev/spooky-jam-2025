@@ -33,8 +33,11 @@ transform = Transform3D(1.0000001, 1.1175871e-08, 1.4901161e-08, -7.450581e-09, 
 
 [node name="StartingLevel" parent="." instance=ExtResource("3_k2fmo")]
 
-[node name="BossAi" parent="StartingLevel/NavigationRegion3D" index="7"]
+[node name="BossAi" parent="StartingLevel/NavigationRegion3D" index="1"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 8.383716, 0.14408731, -17.991745)
+
+[node name="Camera3D" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
+transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.6355791, 1.3062027, 1.7326298)
 
 [node name="CenterContainer" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu" index="0"]
 offset_left = 0.0
@@ -48,7 +51,7 @@ offset_right = 0.0
 environment = ExtResource("4_6q06x")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." groups=["light"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6686416, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19081354, 1.4290911, 0.32321876)
 light_color = Color(0.9093832, 1, 0.99994105, 1)
 light_energy = 0.7
 shadow_enabled = true

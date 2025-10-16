@@ -26,29 +26,29 @@ script = ExtResource("1_vjoyf")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_e6bok")
 
-[node name="starting_area" parent="." instance=ExtResource("1_u0ng2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
-
-[node name="long_hallway_with_bathroom" parent="." instance=ExtResource("2_p70ti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.012879372)
-
-[node name="LivingRoom" parent="." instance=ExtResource("3_p70ti")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
-
-[node name="FrontHall" parent="." instance=ExtResource("4_fuxs2")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)
-
-[node name="StairWell" parent="." instance=ExtResource("5_wn3j4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.7582, -1.316661, -19.75122)
-
-[node name="StorageRoom" parent="." instance=ExtResource("6_xlana")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.422617)
-
 [node name="JunctionRoom" parent="NavigationRegion3D" instance=ExtResource("7_lfrea")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.694659, -2.9583678, -9.4564905)
 
 [node name="BossAi" parent="NavigationRegion3D" instance=ExtResource("8_s32hy")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 13.124408, -2.6312466, -8.370862)
+
+[node name="starting_area" parent="NavigationRegion3D" instance=ExtResource("1_u0ng2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
+
+[node name="long_hallway_with_bathroom" parent="NavigationRegion3D" instance=ExtResource("2_p70ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.115170956)
+
+[node name="LivingRoom" parent="NavigationRegion3D" instance=ExtResource("3_p70ti")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
+
+[node name="FrontHall" parent="NavigationRegion3D" instance=ExtResource("4_fuxs2")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)
+
+[node name="StairWell" parent="NavigationRegion3D" instance=ExtResource("5_wn3j4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.7582, -1.316661, -19.75122)
+
+[node name="StorageRoom" parent="NavigationRegion3D" instance=ExtResource("6_xlana")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.422617)
 
 [node name="MainMenuCanvasLayer" parent="." instance=ExtResource("10_4sr6x")]
 
@@ -56,7 +56,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 13.124408, -2.6312466, 
 transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.7062898, 1.463085, 1.5289761)
 
 [node name="PC2" parent="." instance=ExtResource("10_ydyic")]
-transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.7450578, 1.186066, 2.35408)
+transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.6435325, 1.0316298, 2.4173863)
 
 [node name="top_left" type="Marker3D" parent="PC2/Monitor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.552835, 2.1371083, 0.22655869)
