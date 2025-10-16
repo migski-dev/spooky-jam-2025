@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=14 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="Script" uid="uid://c2n24fl82num3" path="res://scenes/levels/starting_level/starting_level.gd" id="1_vjoyf"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
 [ext_resource type="PackedScene" uid="uid://dox26qb6ud42q" path="res://scenes/levels/level_parts/storage_room.tscn" id="6_xlana"]
 [ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
-[ext_resource type="PackedScene" uid="uid://und7mwi6sufu" path="res://scenes/boss_ai/boss_ai.tscn" id="8_s32hy"]
 [ext_resource type="PackedScene" uid="uid://wishy0tw4j76" path="res://scenes/ui/main_menu/main_menu_canvas_layer.tscn" id="10_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dqh1s5mat22da" path="res://scenes/objects/pc/pc_2.tscn" id="10_ydyic"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="12_4sr6x"]
@@ -28,9 +27,6 @@ navigation_mesh = SubResource("NavigationMesh_e6bok")
 
 [node name="JunctionRoom" parent="NavigationRegion3D" instance=ExtResource("7_lfrea")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.694659, -2.9583678, -9.4564905)
-
-[node name="BossAi" parent="NavigationRegion3D" instance=ExtResource("8_s32hy")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 13.124408, -2.6312466, -8.370862)
 
 [node name="starting_area" parent="NavigationRegion3D" instance=ExtResource("1_u0ng2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
