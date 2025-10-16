@@ -8,7 +8,7 @@ const ATTACK_RANGE = 2.0
 
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var anim_tree: AnimationTree = $SJ25_LP_ANIM_V1/AnimationTree
+@onready var anim_tree: AnimationTree = $SJ25_LP_ANIM_TEXTURED/AnimationTree
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -16,9 +16,9 @@ func _ready():
 	
 func _physics_process(delta):
 	match state_machine.get_current_node():
-		"IDLE":
+		"IdleTweak":
 			anim_tree.set("parameters/conditions/RUN", true)
-		"GOOFY_RUN":
+		"Run":
 			velocity = Vector3.ZERO
 			
 			nav_agent.target_position = player.global_position
@@ -27,7 +27,7 @@ func _physics_process(delta):
 			velocity = (next_nav_point - global_position).normalized() * SPEED
 			anim_tree.set("parameters/conditions/ATTACK", target_in_range())
 			move_and_slide()
-		"ATTACK":
+		"Attack":
 			anim_tree.set("parameters/conditions/RUN", !target_in_range())
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP )
 

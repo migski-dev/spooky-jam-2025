@@ -2,6 +2,7 @@ extends CanvasLayer
 
 func _on_play_button_pressed():
 	$AudioStreamPlayer.stop()
+	$PowerOutagePlayer.play()
 	$AspectRatioContainer/SubViewportContainer/SubViewport/Camera3D.current = false
 	CameraManager.transition_camera($AspectRatioContainer/SubViewportContainer/SubViewport/Camera3D, get_tree().get_first_node_in_group("player").camera, 2.0, false)
 	visible = false
@@ -9,7 +10,11 @@ func _on_play_button_pressed():
 	SignalBus.on_game_start.emit()
 	get_tree().get_first_node_in_group("main").window_has_focus = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	get_tree().get_first_node_in_group("player").flashlight.visible = true
+	get_tree().get_first_node_in_group("player").flashlight.visible = false
+
+	
+	
+	
 	
 
 

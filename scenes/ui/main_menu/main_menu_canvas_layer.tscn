@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wishy0tw4j76"]
+[gd_scene load_steps=10 format=3 uid="uid://wishy0tw4j76"]
 
 [ext_resource type="Shader" uid="uid://dlrfv57dcgadr" path="res://shaders/pause_menu.gdshader" id="1_fuogq"]
 [ext_resource type="Script" uid="uid://cpiasnm7nom8x" path="res://scenes/ui/main_menu/main_menu_canvas_layer.gd" id="1_gopm1"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bw0utxhg55pod" path="res://assets/fonts/Newsreader_60pt-ExtraLight.ttf" id="4_gopm1"]
 [ext_resource type="AudioStream" uid="uid://33u7j1oi74xo" path="res://assets/bgm/v2 Horror Jam Main Menu.ogg" id="5_544lk"]
 [ext_resource type="PackedScene" uid="uid://becdk23vwtbj1" path="res://scenes/ui/settings_menu/settings.tscn" id="5_h0rij"]
+[ext_resource type="AudioStream" uid="uid://ce4bd668uwdby" path="res://assets/sfx/power-down-45784.ogg" id="8_wbqph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nm12e"]
 shader = ExtResource("1_fuogq")
@@ -97,6 +98,9 @@ layout_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_544lk")
 autoplay = true
+
+[node name="PowerOutagePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wbqph")
 
 [connection signal="pressed" from="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

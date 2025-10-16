@@ -13,6 +13,8 @@ func _ready():
 
 
 func _on_game_start():
+	get_tree().get_first_node_in_group('main').in_main_menu = false
+	
 	for light in get_tree().get_nodes_in_group("light"):
 		light.visible = false
 

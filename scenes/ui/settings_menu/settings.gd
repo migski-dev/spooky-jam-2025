@@ -8,8 +8,9 @@ func _on_volume_value_changed(value):
 
 
 func _on_check_box_pressed():
+	AudioManager.current_audio_level = 0
 	AudioServer.set_bus_volume_db(0, linear_to_db(0/100))
-
+	
 
 func _on_back_pressed():
 	print('back')

@@ -5,6 +5,7 @@ class_name Main
 @onready var paused = false
 @onready var pause_menu = $PauseMenu
 @onready var settings_menu = $Settings
+@onready var in_main_menu = true
 var window_has_focus = true
 
 
@@ -16,9 +17,10 @@ func _notification(what: int) -> void:
 			print("NOPE!")
 			
 		NOTIFICATION_APPLICATION_FOCUS_IN:
-			window_has_focus = true
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			print("YEP!")
+			if in_main_menu == false:
+				window_has_focus = true
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				print("YEP!")
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):

@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqh1s5mat22da"]
+[gd_scene load_steps=5 format=3 uid="uid://dqh1s5mat22da"]
 
 [ext_resource type="PackedScene" uid="uid://bhm4m2mc2oohs" path="res://assets/models/pc/PC.glb" id="1_2al0r"]
+[ext_resource type="Script" uid="uid://cqgvevbal27j4" path="res://scenes/objects/pc/pc_2.gd" id="2_gexx1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2al0r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2al0r"]
+albedo_color = Color(0.14727598, 0.291209, 0.35521743, 1)
+emission_enabled = true
+emission = Color(0.46607536, 0.5264067, 0.5045632, 1)
 
 [node name="PC2" instance=ExtResource("1_2al0r")]
+script = ExtResource("2_gexx1")
+
+[node name="ScreenGlow" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(4.030839, 0, 0, 0, 2.7076588, 0, 0, 0, 1, 0, 1.1670024, 0.23138082)
+mesh = SubResource("QuadMesh_2al0r")
+surface_material_override/0 = SubResource("StandardMaterial3D_2al0r")

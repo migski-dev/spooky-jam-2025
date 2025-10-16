@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://do2hmy0kwklri"]
 
 [ext_resource type="Script" uid="uid://dls4dvp7hdgmp" path="res://scenes/cutscene/cutscene.gd" id="1_0lphj"]
-[ext_resource type="VideoStream" uid="uid://csvbu04633gf4" path="res://assets/videos/TEST_RESULT - Trim.ogv" id="1_vayev"]
+[ext_resource type="VideoStream" uid="uid://b03gn2us0kcif" path="res://assets/videos/movieout.6.ogv" id="2_0lphj"]
 
 [node name="Cutscene" type="AspectRatioContainer"]
 anchors_preset = 15
@@ -17,8 +17,7 @@ script = ExtResource("1_0lphj")
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
-stream = ExtResource("1_vayev")
-speed_scale = 4.0
+stream = ExtResource("2_0lphj")
 autoplay = true
 expand = true
 
