@@ -48,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.115170956)
 
 [node name="LivingRoom" parent="NavigationRegion3D" instance=ExtResource("5_up0v7")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.844265, -0.19245185, -29.703978)
 
 [node name="FrontHall" parent="NavigationRegion3D" instance=ExtResource("6_4xau6")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)

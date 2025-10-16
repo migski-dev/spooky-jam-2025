@@ -20,6 +20,8 @@ func _on_game_start():
 	
 	for light in get_tree().get_nodes_in_group("light"):
 		light.visible = false
+		
+	get_tree().get_first_node_in_group('player').play_ambiance()
 
 func _on_viewport_size_changed():
 	print('viewport size changed')

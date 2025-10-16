@@ -2,8 +2,8 @@ class_name Player
 extends CharacterBody3D
 
 #Parameters -
-@export var SPEED = 1.7
-#@export var SPEED = 8
+#@export var SPEED = 1.7
+@export var SPEED = 8
 @export var MOUSE_SENSITIVITY = 0.003
 const MIN_CAMERA_X_PITCH = deg_to_rad(-80)
 const MAX_CAMERA_X_PITCH = deg_to_rad(80)
@@ -15,6 +15,9 @@ var looking_at_interactable_object : bool = false
 @onready var flashlight = $SpotLight3D
 @onready var hint_ui = $UI/HintUI
 @onready var interaction_ui = $UI/InteractionUI
+@onready var bgm_audio: AudioStreamPlayer = $AI_Audio
+@onready var ambiance_audio: AudioStreamPlayer = $Ambiance_Audio
+
 
 var turned_on_flashlight = false
 
@@ -111,3 +114,6 @@ func _on_game_start():
 	
 func start_alpha_video():
 	interaction_ui.start_hallucination()
+	
+func play_ambiance() -> void:
+	ambiance_audio.play()
