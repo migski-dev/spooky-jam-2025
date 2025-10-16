@@ -5,28 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://bdx4x7ygyd3oo" path="res://scenes/levels/level_parts/living_room.tscn" id="3_p70ti"]
 [ext_resource type="PackedScene" uid="uid://bb4dpuq7pvlyt" path="res://scenes/levels/level_parts/front_hall.tscn" id="4_fuxs2"]
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
-[ext_resource type="PackedScene" path="res://scenes/levels/level_parts/storage_room.tscn" id="6_xlana"]
-[ext_resource type="PackedScene" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
+[ext_resource type="PackedScene" uid="uid://dox26qb6ud42q" path="res://scenes/levels/level_parts/storage_room.tscn" id="6_xlana"]
+[ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
 
 [node name="StartingLevel" type="Node3D"]
 
 [node name="starting_area" parent="." instance=ExtResource("1_u0ng2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06747317, 0, -0.23434353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
 
 [node name="long_hallway_with_bathroom" parent="." instance=ExtResource("2_p70ti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.045413017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.012879372)
 
 [node name="LivingRoom" parent="." instance=ExtResource("3_p70ti")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.049313, 0, -29.706842)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
 
 [node name="FrontHall" parent="." instance=ExtResource("4_fuxs2")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, 0, -11.170843)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)
 
 [node name="StairWell" parent="." instance=ExtResource("5_wn3j4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.861929, -1.2979643, -19.75122)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.7582, -1.316661, -19.75122)
 
 [node name="StorageRoom" parent="." instance=ExtResource("6_xlana")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.135832, -2.896861, -18.42585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.422617)
 
 [node name="JunctionRoom" parent="." instance=ExtResource("7_lfrea")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.694659, -2.9583678, -9.4564905)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqqwb2lp7d05v"]
+
+[ext_resource type="Script" uid="uid://crd8e4i82vtpb" path="res://light_switch.gd" id="1_lmdqo"]
+[ext_resource type="PackedScene" uid="uid://u6x17hixnjyo" path="res://assets/models/Low Poly Furniture/Miscellaneous/Light Switch.fbx" id="2_xlnf8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmdqo"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gbdq"]
+size = Vector3(5, 5, 1)
+
+[node name="LightSwitch" type="StaticBody3D"]
+script = ExtResource("1_lmdqo")
+
+[node name="CollisionBox3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lmdqo")
+
+[node name="Light Switch" parent="." instance=ExtResource("2_xlnf8")]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ActivationBound" type="Area3D" parent="."]
+
+[node name="CollisionBox3D" type="CollisionShape3D" parent="ActivationBound"]
+shape = SubResource("BoxShape3D_1gbdq")

@@ -80,12 +80,12 @@ func _physics_process(delta):
 
 #When Player looks at an interactable object
 func show_interaction(text):
-	$UI/InteractionUI/Label.text = text
-	$UI/InteractionUI.visible = true
+	$UI/InteracableObjectUI.visible = true
+	$UI/InteracableObjectUI/Label.text = text
 
 #When Player stops looking at an interactable object
 func hide_interaction():
-	$UI/InteractionUI.visible = false
+	$UI/InteracableObjectUI.visible = false
 	
 func _on_transition_start():
 	flashlight.visible = false
