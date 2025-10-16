@@ -17,12 +17,16 @@ func switch_camera(from, to) -> void:
 	from.current = false
 	to.current = true
 	
-func transition_camera(from: Camera3D, to: Camera3D, duration: float = 1.0) -> void:
+func transition_camera(from: Camera3D, to: Camera3D, duration: float = 1.0, flashlight_on: bool = true) -> void:
 	if transitioning: 
 		return
 		
 	transition_start.emit()	
-	$Camera3D/SpotLight3D.visible = true
+	
+	if(flashlight_on):
+		$Camera3D/SpotLight3D.visible = true
+	else:
+		$Camera3D/SpotLight3D.visible = false
 
 		
 	# Copy parameters of source camera
@@ -55,4 +59,5 @@ func transition_camera(from: Camera3D, to: Camera3D, duration: float = 1.0) -> v
 	to.current = true
 	transitioning = false
 	transition_complete.emit()
+	
 	$Camera3D/SpotLight3D.visible = false
