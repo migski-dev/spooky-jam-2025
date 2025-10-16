@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmn1xixfenpy3"]
+
+[ext_resource type="Script" uid="uid://cibyvcgfm6dob" path="res://scenes/objects/flickering_light/flickering_light.gd" id="1_xthaj"]
+[ext_resource type="FastNoiseLite" uid="uid://d00xwafhwmu3h" path="res://scenes/objects/flickering_light/fast_noise_lite.tres" id="2_rn857"]
+
+[node name="FlickeringLight" type="OmniLight3D"]
+script = ExtResource("1_xthaj")
+noise = ExtResource("2_rn857")

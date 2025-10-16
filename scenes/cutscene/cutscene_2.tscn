@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ko0hoi4yotvm"]
+
+[ext_resource type="Script" uid="uid://dls4dvp7hdgmp" path="res://scenes/cutscene/cutscene.gd" id="1_854e2"]
+[ext_resource type="VideoStream" uid="uid://ccwrdlqmmp3cl" path="res://assets/videos/hand_test.ogv" id="2_xt851"]
+
+[node name="Cutscene2" type="AspectRatioContainer"]
+script = ExtResource("1_854e2")
+cutscene_stream = ExtResource("2_xt851")
+metadata/_custom_type_script = "uid://dls4dvp7hdgmp"

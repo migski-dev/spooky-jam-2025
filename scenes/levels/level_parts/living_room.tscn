@@ -349,7 +349,7 @@ transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.092784
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 7.343444, 0.6229619, -6.4387465)
 
 [node name="Lamp A" parent="Objects/Static" instance=ExtResource("17_bbcfs")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.361401, 1.3655316, -12.6434555)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.361401, 1.3655316, -12.467069)
 
 [node name="Wall Shelf A" parent="Objects/Static" instance=ExtResource("18_pa3gh")]
 transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, 16.678238, 1.3735201, -8.50745)

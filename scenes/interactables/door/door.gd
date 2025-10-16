@@ -1,14 +1,16 @@
 class_name Door
 extends InteractableObject
 
+signal on_door_opened()
+
 #Door Parameters
 @export var open_degrees = 90
-var anim_player : AnimationPlayer
+#var anim_player : AnimationPlayer
 
 func _ready():
 	#Set Base Hint Text or Inherit it from scene instance
 	hint_text = "Open Door"
-	anim_player = $AnimationPlayer
+	#anim_player = $AnimationPlayer
 	
 	#get memory reference to player
 	player_ref = get_tree().get_first_node_in_group("Player")

@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 #Parameters -
 @export var SPEED = 1.7
+#@export var SPEED = 8
 @export var MOUSE_SENSITIVITY = 0.003
 const MIN_CAMERA_X_PITCH = deg_to_rad(-80)
 const MAX_CAMERA_X_PITCH = deg_to_rad(80)
@@ -13,6 +14,7 @@ var looking_at_interactable_object : bool = false
 @onready var camera = $Camera3D
 @onready var flashlight = $SpotLight3D
 @onready var hint_ui = $UI/HintUI
+@onready var interaction_ui = $UI/InteractionUI
 
 var turned_on_flashlight = false
 
@@ -79,7 +81,7 @@ func _physics_process(delta):
 	var query = PhysicsRayQueryParameters3D.create(global_position, global_position - global_transform.basis.z * 1000)
 	var result = space.intersect_ray(query)
 	
-	#Checks for Interactable Objects
+	#Checks for Interactable Objects fff5c6
 	if result and result.collider.has_signal("player_sees_object"):
 		result.collider.emit_signal("player_sees_object")
 	
@@ -106,3 +108,6 @@ func _on_transition_end():
 	
 func _on_game_start():
 	hint_ui.display_hint("Flashlight", "Press F to toggle")
+	
+func start_alpha_video():
+	interaction_ui.start_hallucination()

@@ -33,9 +33,6 @@ transform = Transform3D(1.0000001, 1.1175871e-08, 1.4901161e-08, -7.450581e-09, 
 
 [node name="StartingLevel" parent="." instance=ExtResource("3_k2fmo")]
 
-[node name="BossAi" parent="StartingLevel/NavigationRegion3D" index="1"]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 8.383716, 0.14408731, -17.991745)
-
 [node name="Camera3D" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
 transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.6355791, 1.3062027, 1.7326298)
 
@@ -50,12 +47,11 @@ offset_right = 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_6q06x")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["light"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19081354, 1.4290911, 0.32321876)
-light_color = Color(0.9093832, 1, 0.99994105, 1)
-light_energy = 0.7
-shadow_enabled = true
-shadow_opacity = 0.35
+[node name="PauseMenu" parent="." instance=ExtResource("6_ow5a4")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("7_hujxm")]
+visible = false
 
 [node name="PS-Shader-CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4
@@ -79,15 +75,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_ow5a4")]
-visible = false
-
-[node name="Settings" parent="." instance=ExtResource("7_hujxm")]
-visible = false
-
 [editable path="Player"]
 [editable path="StartingLevel"]
+[editable path="StartingLevel/LevelController"]
+[editable path="StartingLevel/NavigationRegion3D/JunctionRoom"]
 [editable path="StartingLevel/MainMenuCanvasLayer"]
 [editable path="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings"]
 [editable path="StartingLevel/PC2"]
-[editable path="StartingLevel/LevelController"]

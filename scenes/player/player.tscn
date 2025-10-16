@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bec3dmcyb8fn7" path="res://assets/textures/Test_InteractKey/E_key.png" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://ckcrv1edways8" path="res://scenes/player/interaction_ui.gd" id="2_gmlin"]
 [ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/alpha_video.gdshader" id="3_lvxji"]
-[ext_resource type="VideoStream" uid="uid://ccwrdlqmmp3cl" path="res://assets/videos/hand_test.ogv" id="4_p47bc"]
+[ext_resource type="VideoStream" uid="uid://num762anfqdp" path="res://assets/videos/ALPHA_VIDEO.ogv" id="4_75vfm"]
 [ext_resource type="PackedScene" uid="uid://c753ubucfcogs" path="res://scenes/ui/hint_ui/hint_ui.tscn" id="6_75vfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8afob"]
@@ -13,7 +13,7 @@ height = 0.9995117
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
 shader = ExtResource("3_lvxji")
-shader_parameter/chroma_key_color = Color(0.5, 1, 0, 1)
+shader_parameter/chroma_key_color = Color(0, 1, 0, 1)
 shader_parameter/pickup_range = 0.1
 shader_parameter/fade_amount = 0.0
 
@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35420495, 0.063)
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2272942, -0.53779554)
 visible = false
-light_color = Color(0.99999994, 0.9607071, 0.7778217, 1)
+light_color = Color(1, 0.9607843, 0.7764706, 1)
 light_energy = 7.0
 light_indirect_energy = 0.1
 light_volumetric_fog_energy = 0.1
@@ -48,6 +48,7 @@ spot_angle_attenuation = 3.0
 layer = 0
 
 [node name="InteractionUI" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,7 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("4_p47bc")
+stream = ExtResource("4_75vfm")
 autoplay = true
 
 [node name="InteracableObjectUI" type="Control" parent="UI"]

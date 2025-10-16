@@ -6,11 +6,14 @@ extends Node3D
 @onready var screen_top_left = $PC2/Monitor/top_left.position  # 3D position relative to monitor
 @onready var screen_bottom_right = $PC2/Monitor/bot_right.position
 
+@onready var living_room_light = $LivingRoomLight
+
+
 func _ready():
 	get_viewport().size_changed.connect(_on_viewport_size_changed)
 	_update_ui_positioning()
 	SignalBus.on_game_start.connect(_on_game_start)
-
+	
 
 func _on_game_start():
 	get_tree().get_first_node_in_group('main').in_main_menu = false
@@ -44,3 +47,18 @@ func _update_ui_positioning():
 	# Update SubViewportContainer position and size
 	menu_ui.position = Vector2(min_x, min_y)
 	menu_ui.size = Vector2(max_x - min_x, max_y - min_y)
+
+
+func _on_area_3d_light_trigger_body_entered(body):
+	if body.is_in_group('player'):
+		living_room_light.visible = true
+
+
+func _on_area_3d_whisper_trigger_body_entered(body):
+	if body.is_in_group('player'):
+			living_room_light.visible = false
+			$Audio_Whispers.play()
+			
+func _on_door_opened():
+	$Audio_Whispers.stop()
+			
