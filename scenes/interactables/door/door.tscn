@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgyfblco8ojer"]
+[gd_scene load_steps=9 format=3 uid="uid://dgyfblco8ojer"]
 
 [ext_resource type="Script" uid="uid://fahbakfnfym8" path="res://scenes/interactables/door/door.gd" id="1_6jnl5"]
+[ext_resource type="Texture2D" uid="uid://doew0xc7s307s" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/wood_pt_3_1.png" id="2_57sya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_57sya"]
 size = Vector3(1.4663696, 2.048, 0.152)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70ylm"]
 albedo_color = Color(0.26666668, 0.14901961, 0, 1)
+albedo_texture = ExtResource("2_57sya")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6jnl5"]
 material = SubResource("StandardMaterial3D_70ylm")

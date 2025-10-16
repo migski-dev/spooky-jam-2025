@@ -1,16 +1,17 @@
-[gd_scene load_steps=71 format=4 uid="uid://bdx4x7ygyd3oo"]
+[gd_scene load_steps=73 format=4 uid="uid://bdx4x7ygyd3oo"]
 
+[ext_resource type="Material" uid="uid://c88x03e3j7dtc" path="res://assets/materials/flooring.tres" id="1_cntjv"]
 [ext_resource type="PackedScene" uid="uid://0n7cygdomhdi" path="res://scenes/objects/gray_box_furniture.tscn" id="1_cppmt"]
 [ext_resource type="PackedScene" uid="uid://bv2jop5eht4g7" path="res://scenes/objects/glass.tscn" id="2_b20ro"]
 [ext_resource type="PackedScene" uid="uid://bcnwshpgowc02" path="res://assets/models/Low Poly Furniture/Miscellaneous/Speaker.fbx" id="2_gf2xa"]
 [ext_resource type="PackedScene" uid="uid://datl22wqd8c0h" path="res://assets/models/Low Poly Furniture/Shelves/Shelf D.fbx" id="2_p1ryi"]
 [ext_resource type="PackedScene" uid="uid://dgyfblco8ojer" path="res://scenes/interactables/door/door.tscn" id="3_7fqrl"]
 [ext_resource type="PackedScene" uid="uid://dpcvqw3u5xkwb" path="res://assets/models/Low Poly Furniture/Miscellaneous/Books B.fbx" id="3_gsixo"]
-[ext_resource type="PackedScene" uid="uid://d1prn6dt4nytx" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Cupboard C.fbx" id="3_tsg8c"]
+[ext_resource type="PackedScene" uid="uid://d1prn6dt4nytx" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard C.fbx" id="3_tsg8c"]
 [ext_resource type="PackedScene" uid="uid://beuw1rrnfkqcr" path="res://assets/models/Low Poly Furniture/Miscellaneous/Books A.fbx" id="4_5rm8n"]
-[ext_resource type="PackedScene" uid="uid://04trg88qsnts" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Cupboard B.fbx" id="4_cntjv"]
+[ext_resource type="PackedScene" uid="uid://04trg88qsnts" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard B.fbx" id="4_cntjv"]
 [ext_resource type="PackedScene" uid="uid://dk0uqu7gw6h06" path="res://assets/models/Low Poly Furniture/Miscellaneous/Globe.fbx" id="5_gsixo"]
-[ext_resource type="PackedScene" uid="uid://c5dyahun0vkb" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Cupboard A.fbx" id="5_ld0eh"]
+[ext_resource type="PackedScene" uid="uid://c5dyahun0vkb" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard A.fbx" id="5_ld0eh"]
 [ext_resource type="PackedScene" uid="uid://cqqwb2lp7d05v" path="res://scenes/objects/light_switch.tscn" id="7_bbcfs"]
 [ext_resource type="PackedScene" uid="uid://c5kfelmg42qrg" path="res://assets/models/Low Poly Furniture/Sofas/Sofa B.fbx" id="9_m5ut0"]
 [ext_resource type="PackedScene" uid="uid://c5lj7g4hgayuv" path="res://assets/models/Low Poly Furniture/Sofas/Sofa D.fbx" id="10_d5vug"]
@@ -23,18 +24,22 @@
 [ext_resource type="PackedScene" uid="uid://bvvoea8gel188" path="res://assets/models/Low Poly Furniture/Lights/Lamp A.fbx" id="17_bbcfs"]
 [ext_resource type="PackedScene" uid="uid://bykt4imuv6iwd" path="res://assets/models/Low Poly Furniture/Shelves/Wall Shelf A.fbx" id="18_pa3gh"]
 [ext_resource type="PackedScene" uid="uid://8c8wbsvce2sc" path="res://assets/models/Low Poly Furniture/Carpets/Carpet A.fbx" id="20_xu012"]
-[ext_resource type="PackedScene" uid="uid://bqg37xt17vewp" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Fridge B.fbx" id="21_kmj3d"]
-[ext_resource type="PackedScene" uid="uid://dwxxelxuhkxd1" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Cupboard Sink.fbx" id="23_5tvjf"]
-[ext_resource type="PackedScene" uid="uid://mci5e1pbey8g" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Oven.fbx" id="26_m2t3g"]
-[ext_resource type="PackedScene" uid="uid://cjeuiec2fvrfd" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Cupboard F.fbx" id="27_oarte"]
-[ext_resource type="PackedScene" uid="uid://cnxy38p55o841" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Blender.fbx" id="28_uvp36"]
-[ext_resource type="PackedScene" uid="uid://5dg14nyt5fnq" path="res://assets/models/Low Poly Furniture/Electronics/Kitchen/Dishwasher.fbx" id="29_0m84d"]
+[ext_resource type="PackedScene" uid="uid://bqg37xt17vewp" path="res://assets/models/Low Poly Furniture/Kitchen/Fridge B.fbx" id="21_kmj3d"]
+[ext_resource type="PackedScene" uid="uid://dwxxelxuhkxd1" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard Sink.fbx" id="23_5tvjf"]
+[ext_resource type="PackedScene" uid="uid://mci5e1pbey8g" path="res://assets/models/Low Poly Furniture/Kitchen/Oven.fbx" id="26_m2t3g"]
+[ext_resource type="PackedScene" uid="uid://cjeuiec2fvrfd" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard F.fbx" id="27_oarte"]
+[ext_resource type="PackedScene" uid="uid://cnxy38p55o841" path="res://assets/models/Low Poly Furniture/Kitchen/Blender.fbx" id="28_uvp36"]
+[ext_resource type="PackedScene" uid="uid://5dg14nyt5fnq" path="res://assets/models/Low Poly Furniture/Kitchen/Dishwasher.fbx" id="29_0m84d"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_kg5na"]
+[sub_resource type="BoxMesh" id="BoxMesh_ld0eh"]
+material = ExtResource("1_cntjv")
 size = Vector3(12, 0.25, 10)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h16oo"]
 data = PackedVector3Array(-6, 0.125, 5, 6, 0.125, 5, -6, -0.125, 5, 6, 0.125, 5, 6, -0.125, 5, -6, -0.125, 5, 6, 0.125, -5, -6, 0.125, -5, 6, -0.125, -5, -6, 0.125, -5, -6, -0.125, -5, 6, -0.125, -5, 6, 0.125, 5, 6, 0.125, -5, 6, -0.125, 5, 6, 0.125, -5, 6, -0.125, -5, 6, -0.125, 5, -6, 0.125, -5, -6, 0.125, 5, -6, -0.125, -5, -6, 0.125, 5, -6, -0.125, 5, -6, -0.125, -5, 6, 0.125, 5, -6, 0.125, 5, 6, 0.125, -5, -6, 0.125, 5, -6, 0.125, -5, 6, 0.125, -5, -6, -0.125, 5, 6, -0.125, 5, -6, -0.125, -5, 6, -0.125, 5, 6, -0.125, -5, -6, -0.125, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kg5na"]
+size = Vector3(12, 0.25, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdj8v"]
 resource_name = "Material"
@@ -213,7 +218,7 @@ points = PackedVector3Array(-0.25, -1.25, -0.25, -0.25, -1.25, 0.25, -0.25, 1.25
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 8.196344, 0, -8.636801)
-mesh = SubResource("BoxMesh_kg5na")
+mesh = SubResource("BoxMesh_ld0eh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
@@ -559,7 +564,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_grvrc")
 
 [node name="MeshInstance3D24" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-3.59043e-08, 0, 1, 0, 1.2, 0, -0.8213946, 0, -4.371139e-08, 1.0818753, 3.0342245, -3.8747509)
+transform = Transform3D(-3.59043e-08, 0, 1, 0, 1.2, 0, -0.8213946, 0, -4.371139e-08, 1.0818753, 3.0342245, -3.8767207)
 mesh = SubResource("BoxMesh_cppmt")
 skeleton = NodePath("../MeshInstance3D")
 
@@ -603,7 +608,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_m5ut0")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-3.59043e-08, 0, 1, 0, 1.2, 0, -0.8213946, 0, -4.371139e-08, 6.4124355, 1.5109074, -3.8533587)
+transform = Transform3D(-3.59043e-08, 0, 1, 0, 1.2, 0, -0.8213946, 0, -4.371139e-08, 6.4124355, 1.5109074, -3.8639266)
 mesh = SubResource("BoxMesh_m7lda")
 skeleton = NodePath("../MeshInstance3D")
 

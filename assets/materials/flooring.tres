@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c88x03e3j7dtc"]
+
+[ext_resource type="Texture2D" uid="uid://doew0xc7s307s" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/wood_pt_3_1.png" id="1_ptvpn"]
+[ext_resource type="Texture2D" uid="uid://t36ij8vnets7" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Normal Maps/wood_pt_3_1_normal.png" id="2_o26xw"]
+
+[resource]
+albedo_texture = ExtResource("1_ptvpn")
+normal_enabled = true
+normal_texture = ExtResource("2_o26xw")
+uv1_scale = Vector3(10, 10, 1)

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bouekgds2lm71"]
+
+[ext_resource type="Texture2D" uid="uid://bdl2fc3eqte6" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/painted_concrete_wall_pt_1.png" id="1_o1kk8"]
+[ext_resource type="Texture2D" uid="uid://dtngim8egne27" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Normal Maps/painted_concrete_wall_pt_1_normal.png" id="2_77hnk"]
+
+[resource]
+albedo_texture = ExtResource("1_o1kk8")
+normal_enabled = true
+normal_texture = ExtResource("2_77hnk")
+uv1_scale = Vector3(8, 8, 1)
