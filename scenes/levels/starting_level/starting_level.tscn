@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=19 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="Script" uid="uid://c2n24fl82num3" path="res://scenes/levels/starting_level/starting_level.gd" id="1_vjoyf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
 [ext_resource type="PackedScene" uid="uid://wishy0tw4j76" path="res://scenes/ui/main_menu/main_menu_canvas_layer.tscn" id="10_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dqh1s5mat22da" path="res://scenes/objects/pc/pc_2.tscn" id="10_ydyic"]
+[ext_resource type="PackedScene" uid="uid://cdchf4uo2kaln" path="res://scenes/ui/game_over_menu/game_over_canvas_layer.tscn" id="11_nm12e"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="12_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dmn1xixfenpy3" path="res://scenes/objects/flickering_light/flickering_light.tscn" id="12_mg7ic"]
 [ext_resource type="AudioStream" uid="uid://dnstgrdtr58o6" path="res://assets/sfx/four_voices_whispering-6943.ogg" id="13_mg7ic"]
@@ -67,6 +68,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.4226
 
 [node name="Camera3D" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
 transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.7062898, 1.463085, 1.5289761)
+
+[node name="GameOverCanvasLayer" parent="." instance=ExtResource("11_nm12e")]
 
 [node name="PC2" parent="." instance=ExtResource("10_ydyic")]
 transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.6435325, 1.0316298, 2.4173863)

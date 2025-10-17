@@ -61,4 +61,6 @@ func _on_area_3d_whisper_trigger_body_entered(body):
 			
 func _on_door_opened():
 	$Audio_Whispers.stop()
-			
+	
+func reload():
+	get_tree().reload_current_scene()

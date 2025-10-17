@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8gusbff3r4ug"]
+
+[ext_resource type="Script" uid="uid://c2cbfumtyft3d" path="res://scenes/main/main.gd" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://c1ipohujquxte" path="res://scenes/player/player.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://cy75vrx8pjfbq" path="res://scenes/levels/starting_level/starting_level.tscn" id="3_k2fmo"]
+[ext_resource type="Environment" uid="uid://darq6kqqnsfge" path="res://resources/environment1.tres" id="4_6q06x"]
+[ext_resource type="Shader" uid="uid://v76cdnq4ep7g" path="res://shaders/ps_shader.gdshader" id="4_l3cfh"]
+[ext_resource type="Shader" uid="uid://dqo088lq1h1jj" path="res://scenes/main/vignette.gdshader" id="5_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://c81g0b37l55jq" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="6_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://becdk23vwtbj1" path="res://scenes/ui/settings_menu/settings.tscn" id="7_hujxm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1x3f"]
+shader = ExtResource("5_yyfjg")
+shader_parameter/radius = 0.5610000266475
+shader_parameter/softness = 0.5750000273125
+shader_parameter/intensity = 0.5370000255075
+shader_parameter/contrast = 1.738000058805
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q06x"]
+shader = ExtResource("4_l3cfh")
+shader_parameter/viewport_size = Vector2(640, 480)
+shader_parameter/virtual_resolution = Vector2(320, 240)
+
+[node name="Main" type="Node3D" groups=["main"]]
+script = ExtResource("1_k2fmo")
+
+[node name="Player" parent="." instance=ExtResource("2_iuonh")]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 0.99999994, 0, 8.742277e-08, 0, -0.99999994, -1.8558416, 1.1250489, 1.3324997)
+
+[node name="Camera3D" parent="Player" index="1"]
+transform = Transform3D(1.0000001, 1.1175871e-08, 1.4901161e-08, -7.450581e-09, 1, -1.1920929e-07, 0, 0, 1, -0.22707617, 0.5210805, -0.039434075)
+
+[node name="StartingLevel" parent="." instance=ExtResource("3_k2fmo")]
+
+[node name="Camera3D" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
+transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.6355791, 1.3062027, 1.7326298)
+
+[node name="CenterContainer" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu" index="0"]
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="MarginContainer" parent="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings" index="0"]
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_6q06x")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_ow5a4")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("7_hujxm")]
+visible = false
+
+[node name="PS-Shader-CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Vignette" type="ColorRect" parent="PS-Shader-CanvasLayer"]
+material = SubResource("ShaderMaterial_b1x3f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="PS-Shader-CanvasLayer"]
+material = SubResource("ShaderMaterial_6q06x")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[editable path="Player"]
+[editable path="StartingLevel"]
+[editable path="StartingLevel/LevelController"]
+[editable path="StartingLevel/NavigationRegion3D/JunctionRoom"]
+[editable path="StartingLevel/MainMenuCanvasLayer"]
+[editable path="StartingLevel/MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings"]
+[editable path="StartingLevel/PC2"]
