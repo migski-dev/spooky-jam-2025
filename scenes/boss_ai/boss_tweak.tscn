@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://xrhvg24ta8xc"]
+
+[ext_resource type="PackedScene" uid="uid://djuqsbj2ebb01" path="res://scenes/boss_ai/sj_25_lp_anim_textured.tscn" id="1_htp52"]
+
+[node name="BossTweak" type="Node3D"]
+
+[node name="SJ25_LP_ANIM_TEXTURED" parent="." instance=ExtResource("1_htp52")]
+
+[node name="Skeleton3D" parent="SJ25_LP_ANIM_TEXTURED/Armature" index="0"]
+bones/0/position = Vector3(-5.2191644, 6.4408045, -150.51329)
+bones/0/rotation = Quaternion(-0.6656324, -0.25627846, 0.52355987, 0.46598274)
+bones/1/rotation = Quaternion(-0.07983736, 0.17815582, -0.3053771, 0.93200403)
+bones/2/position = Vector3(-4.4405456e-06, 23.269625, 3.2186508e-06)
+bones/2/rotation = Quaternion(-0.07771125, 0.056259803, -0.05813512, 0.9936882)
+bones/3/position = Vector3(-7.390976e-06, 26.593897, -4.291056e-06)
+bones/3/rotation = Quaternion(-0.0735777, 0.06118169, -0.057031512, 0.99377596)
+bones/4/position = Vector3(5.80076e-06, 29.918104, 5.7251286e-06)
+bones/4/rotation = Quaternion(-0.03949206, 0.012552861, 0.034808133, 0.9985345)
+bones/5/rotation = Quaternion(-0.114379, 0.072752796, -0.21204221, 0.9678133)
+bones/7/position = Vector3(0.60062736, 27.21532, -11.615422)
+bones/7/rotation = Quaternion(-0.15242878, -0.6941753, 0.6967593, -0.09701865)
+bones/8/position = Vector3(-3.5646653e-06, 22.809578, -7.6487995e-06)
+bones/8/rotation = Quaternion(0.07074883, -0.5633906, 0.3170982, 0.7596278)
+bones/9/position = Vector3(-3.95581e-06, 70.79172, -1.1042145e-05)
+bones/9/rotation = Quaternion(-0.3121726, -0.25822082, 0.8395928, 0.36187598)
+bones/10/position = Vector3(1.2099736e-05, 33.760754, 7.6293595e-06)
+bones/11/position = Vector3(0.8621244, 27.28707, 11.615438)
+bones/11/rotation = Quaternion(0.5536598, 0.1558993, -0.21059966, 0.79044545)
+bones/12/position = Vector3(-1.0612161e-05, 22.80954, -2.0788282e-05)
+bones/12/rotation = Quaternion(0.23748973, 0.8170193, -0.018819304, -0.52509433)
+bones/13/position = Vector3(-3.5867793e-06, 70.836914, 2.951088e-06)
+bones/13/rotation = Quaternion(-0.8320178, 0.36681375, 0.3240242, -0.2611559)
+bones/14/position = Vector3(9.059906e-06, 33.7151, 1.907345e-06)
+bones/15/position = Vector3(0.40971926, -10.697979, -24.054796)
+bones/15/rotation = Quaternion(-0.024711568, -0.15050189, 0.9876121, -0.0368909)
+bones/16/position = Vector3(7.3720876e-06, 85.13332, -5.687581e-06)
+bones/16/rotation = Quaternion(0.002926801, -0.029819245, -0.51232684, 0.8582677)
+bones/17/rotation = Quaternion(0.50656587, -0.55386037, 0.43475926, 0.49760824)
+bones/18/rotation = Quaternion(0.24889211, -0.030261455, 0.008228088, 0.9680235)
+bones/20/position = Vector3(0.48564333, -10.697952, 24.054798)
+bones/20/rotation = Quaternion(-0.17101811, 0.12945873, 0.9723802, 0.09203289)
+bones/21/position = Vector3(7.6956985e-06, 85.112724, 5.0186204e-06)
+bones/21/rotation = Quaternion(0.114619665, 0.016056584, -0.51852953, 0.84719044)
+bones/22/rotation = Quaternion(0.4952766, -0.33726323, 0.50529444, 0.6209929)
+bones/23/rotation = Quaternion(0.2840205, 0.03826712, -0.012302606, 0.9579753)
+
+[node name="AnimationPlayer" parent="SJ25_LP_ANIM_TEXTURED" index="1"]
+autoplay = "IdleTweak"
+speed_scale = 4.455
+
+[editable path="SJ25_LP_ANIM_TEXTURED"]

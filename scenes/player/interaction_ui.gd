@@ -5,9 +5,9 @@ func _ready():
 
 func _on_video_stream_player_finished():
 	self.visible = false
-	print('fasdfasdfasdf')
+	print('ALPHA FINISHED ')
 
-func start_hallucination(video_path):
+func start_hallucination():
 	self.visible = true
-	$VideoStreamPlayer.stream = load(video_path)
+	#$VideoStreamPlayer.stream = load(video_path)
 	$VideoStreamPlayer.play()

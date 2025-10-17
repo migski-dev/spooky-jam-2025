@@ -1,7 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://bfkpyf20xapi5"]
+[gd_scene load_steps=23 format=4 uid="uid://bfkpyf20xapi5"]
 
 [ext_resource type="PackedScene" uid="uid://cyprqmsxw6d31" path="res://scenes/interactables/electrical_panel/electric_panel.tscn" id="1_2mogx"]
+[ext_resource type="Material" uid="uid://c8w43uil3ny7k" path="res://assets/materials/concrete.tres" id="1_8q41m"]
 [ext_resource type="PackedScene" uid="uid://dgyfblco8ojer" path="res://scenes/interactables/door/door.tscn" id="2_bch6g"]
+[ext_resource type="Material" uid="uid://dt8tgpl486vqp" path="res://assets/materials/BRICK_HOUSE.tres" id="3_ed3xi"]
+[ext_resource type="Texture2D" uid="uid://chdb0y1bbam73" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/cinder_block_wall_pt_1.png" id="4_8q41m"]
+[ext_resource type="Texture2D" uid="uid://dm17x2yikadhd" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Normal Maps/cinder_block_wall_pt_1_normal.png" id="5_2ydc0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kg5na"]
 size = Vector3(10, 0.25, 6)
@@ -61,13 +65,23 @@ size = Vector3(0.5, 2.5, 7)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_aj4v2"]
 points = PackedVector3Array(-0.25, -1.25, -3.5, 0.25, -1.25, -3.5, -0.25, -1.25, 3.5, -0.25, 1.25, -3.5, 0.25, 1.25, -3.5, 0.25, -1.25, 3.5, -0.25, 1.25, 3.5, 0.25, 1.25, 3.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2aiy"]
+albedo_texture = ExtResource("4_8q41m")
+normal_enabled = true
+normal_texture = ExtResource("5_2ydc0")
+uv1_scale = Vector3(1.87, 2, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_uplet"]
+material = SubResource("StandardMaterial3D_x2aiy")
 size = Vector3(0.5, 0.5, 2)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ed3xi"]
 points = PackedVector3Array(0.25, 0.25, 1, 0.25, -0.25, 1, 0.25, 0.25, -1, -0.25, 0.25, 1, -0.25, -0.25, 1, 0.25, -0.25, -1, -0.25, 0.25, -1, -0.25, -0.25, -1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bch6g"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_bch6g"]
+material = SubResource("StandardMaterial3D_bch6g")
 size = Vector3(0.5, 2.5, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8q41m"]
@@ -76,6 +90,7 @@ points = PackedVector3Array(-0.25, -1.25, -5, 0.25, -1.25, -5, -0.25, -1.25, 5, 
 [node name="JunctionRoom" type="Node3D"]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_8q41m")
 mesh = SubResource("BoxMesh_kg5na")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -85,6 +100,7 @@ shape = SubResource("ConcavePolygonShape3D_c7ytd")
 
 [node name="Cieling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.535341, -0.13976943)
+material_override = ExtResource("1_8q41m")
 mesh = SubResource("BoxMesh_kg5na")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cieling"]
@@ -108,6 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.036832, 0.95794237, 2.84172
 
 [node name="Door2" type="MeshInstance3D" parent="Objects/Interactable/DoorNode"]
 transform = Transform3D(-116, -6.4725864e-06, -7.9202834e-13, 0, -1.8737325e-06, 120, -1.7515513e-05, 42.866, 5.2453665e-06, -0.5115397, -0.94145, 0.17107575)
+material_override = ExtResource("3_ed3xi")
 mesh = SubResource("ArrayMesh_uplet")
 skeleton = NodePath("")
 
@@ -117,6 +134,7 @@ skeleton = NodePath("")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.745059, 1.1613748, 0.0033545494)
+material_override = ExtResource("3_ed3xi")
 mesh = SubResource("BoxMesh_c7ytd")
 skeleton = NodePath("../..")
 
@@ -127,6 +145,7 @@ shape = SubResource("ConvexPolygonShape3D_bch6g")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7511196, 1.1613748, -0.018319845)
+material_override = ExtResource("3_ed3xi")
 mesh = SubResource("BoxMesh_c7ytd")
 skeleton = NodePath("../..")
 
@@ -137,6 +156,7 @@ shape = SubResource("ConvexPolygonShape3D_uplet")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.0040772, 1.1613748, 2.7422175)
+material_override = ExtResource("3_ed3xi")
 mesh = SubResource("BoxMesh_2mogx")
 skeleton = NodePath("../..")
 
@@ -157,6 +177,7 @@ shape = SubResource("ConvexPolygonShape3D_ed3xi")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0027662516, 1.1613748, -3.2479331)
+material_override = ExtResource("3_ed3xi")
 mesh = SubResource("BoxMesh_bch6g")
 skeleton = NodePath("../..")
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt3ixoeyugj6p"
+path="res://.godot/imported/Layer 1 - AI Encounter.ogg-ec00edc78e598f90a57f0c528d69ee78.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/bgm/Layer 1 - AI Encounter.ogg"
+dest_files=["res://.godot/imported/Layer 1 - AI Encounter.ogg-ec00edc78e598f90a57f0c528d69ee78.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

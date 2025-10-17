@@ -1,9 +1,4 @@
-[gd_resource type="Environment" load_steps=5 format=3 uid="uid://darq6kqqnsfge"]
-
-[sub_resource type="Gradient" id="Gradient_luqmu"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5fx6"]
-gradient = SubResource("Gradient_luqmu")
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://darq6kqqnsfge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_luqmu"]
 sky_top_color = Color(0.06767365, 0.09052234, 0.12095586, 1)
@@ -28,5 +23,4 @@ volumetric_fog_albedo = Color(0.47788018, 0.47788012, 0.47788012, 1)
 volumetric_fog_emission = Color(0.15167353, 1.3010343e-07, 2.7073547e-08, 1)
 volumetric_fog_emission_energy = 0.1
 adjustment_enabled = true
-adjustment_brightness = 1.3
-adjustment_color_correction = SubResource("GradientTexture2D_o5fx6")
+adjustment_brightness = 1.78

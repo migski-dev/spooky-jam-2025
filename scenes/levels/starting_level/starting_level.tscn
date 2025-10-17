@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=19 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="Script" uid="uid://c2n24fl82num3" path="res://scenes/levels/starting_level/starting_level.gd" id="1_vjoyf"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cqbr5ne034tbv" path="res://scenes/levels/level_parts/stair_well.tscn" id="5_wn3j4"]
 [ext_resource type="PackedScene" uid="uid://dox26qb6ud42q" path="res://scenes/levels/level_parts/storage_room.tscn" id="6_xlana"]
 [ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
-[ext_resource type="PackedScene" uid="uid://und7mwi6sufu" path="res://scenes/boss_ai/boss_ai.tscn" id="8_s32hy"]
 [ext_resource type="PackedScene" uid="uid://wishy0tw4j76" path="res://scenes/ui/main_menu/main_menu_canvas_layer.tscn" id="10_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dqh1s5mat22da" path="res://scenes/objects/pc/pc_2.tscn" id="10_ydyic"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="12_4sr6x"]
+[ext_resource type="PackedScene" uid="uid://dmn1xixfenpy3" path="res://scenes/objects/flickering_light/flickering_light.tscn" id="12_mg7ic"]
+[ext_resource type="AudioStream" uid="uid://dnstgrdtr58o6" path="res://assets/sfx/four_voices_whispering-6943.ogg" id="13_mg7ic"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_e6bok"]
 vertices = PackedVector3Array(-2.2101383, 1.6268272, -24.201357, -1.7101383, 1.6268272, -23.701357, -0.9601383, 1.6268272, -24.451357, -1.4601383, 1.6268272, -24.951357, 1.2898617, 0.22682738, -23.201357, 1.2898617, 0.22682738, -24.951357, 0.7898617, 0.22682738, -23.951357, -0.21013832, 0.22682738, -23.201357, -0.21013832, 0.22682738, -23.951357, 5.7898617, 0.22682738, -18.201357, 6.5398617, 0.22682738, -20.201357, 4.7898617, 0.22682738, -21.201357, 3.2898617, 0.22682738, -19.201357, -1.2101383, 0.22682738, -22.951357, -1.2101383, 0.22682738, -21.951357, -0.46013832, 0.22682738, -21.451357, 4.7898617, 0.22682738, -23.451357, 5.7898617, 0.22682738, -23.701357, 6.0398617, 0.22682738, -24.451357, 3.5398617, 0.22682738, -24.951357, 7.2898617, 0.22682738, -24.451357, 7.5398617, 0.22682738, -23.701357, 8.539862, 0.22682738, -23.451357, 9.539862, 0.22682738, -24.951357, -1.7101383, 0.22682738, -19.451357, 2.0398617, 0.22682738, -18.201357, -1.7101383, 0.22682738, -21.201357, -1.9601383, 0.22682738, -21.701357, 6.0398617, 0.22682738, -17.701357, -2.2101383, 0.22682738, -17.201357, 1.7898617, 0.22682738, -17.201357, 8.289862, 0.22682738, -20.951357, 9.789862, 0.22682738, -20.951357, 10.539862, 0.22682738, -19.951357, 10.289862, 0.22682738, -20.951357, 10.539862, 0.22682738, -16.951357, 12.039862, 0.22682738, -17.201357, 12.289862, 0.22682738, -17.951357, 12.539862, 0.22682738, -20.201357, 6.0398617, 0.22682738, -17.201357, 8.039862, 0.22682738, -17.201357, 13.539862, 0.22682738, -17.951357, 14.039862, 0.22682738, -17.201357, 14.039862, 0.22682738, -19.951357, 13.289862, 0.22682738, -20.201357, 8.289862, 0.22682738, -16.201357, 10.539862, 0.22682738, -16.201357, 13.289862, 0.22682738, -24.951357, 12.789862, 0.22682738, -24.951357, 7.5398617, -2.4731727, -22.451357, 7.2898617, -2.4731727, -23.701357, 5.7898617, -2.4731727, -23.701357, 7.5398617, -2.4731727, -19.701357, 7.7898617, -2.4731727, -20.451357, 7.7898617, -2.4731727, -17.201357, 10.039862, -2.4731727, -17.201357, 10.039862, -2.4731727, -17.701357, 7.7898617, -2.4731727, -17.701357, 10.789862, -2.4731727, -13.451357, 10.789862, -2.4731727, -14.951357, 7.5398617, -2.4731727, -15.201357, 5.7898617, -2.4731727, -13.451357, 10.039862, -2.4731727, -19.951357, 10.039862, -2.4731727, -20.451357, 15.539862, -2.3731728, -22.701357, 16.039862, -2.1731725, -21.951357, 16.039862, -2.3731728, -23.451357, 14.039862, -2.4731727, -22.451357, 12.789862, -2.4731727, -22.451357, 12.539862, -2.4731727, -14.951357, 14.539862, -2.4731727, -13.451357, 14.539862, -2.4731727, -15.951357, 14.039862, -2.4731727, -16.201357, 12.789862, -2.4731727, -19.701357, 12.539862, -2.4731727, -17.701357, 12.789862, -2.4731727, -16.951357, 12.539862, -2.4731727, -20.451357, 2.5398617, 0.92682743, -20.201357, 2.5398617, 0.92682743, -22.701357, 2.0398617, 0.92682743, -20.451357, -0.7101383, 0.92682743, -20.451357, 8.039862, 0.22682738, -15.451357, 6.7898617, 0.22682738, -6.951357, 11.789862, 0.22682738, -6.951357, 10.789862, 0.22682738, -15.451357, 6.7898617, 0.22682738, -15.451357, 11.789862, 0.22682738, -15.451357, -2.2101383, 0.22682738, -15.451357, -2.2101383, 0.22682738, -2.701357, -0.46013832, 0.22682738, -2.701357, -0.46013832, 0.22682738, -15.451357, 1.0398617, 0.22682738, -15.451357, 1.0398617, 0.22682738, -13.451357, 2.5398617, 0.22682738, -13.451357, 2.5398617, 0.22682738, -15.451357, 1.0398617, 0.22682738, -11.701357, 1.0398617, 0.22682738, -7.951357, 2.2898617, 0.22682738, -7.951357, 2.2898617, 0.22682738, -11.701357, 7.7898617, -2.6731727, -7.201357, 15.539862, -2.6731727, -7.201357, 15.539862, -2.6731727, -11.201357, 7.7898617, -2.6731727, -11.451357, 1.0398617, 0.22682738, -6.201357, 1.0398617, 0.22682738, -2.701357, 2.5398617, 0.22682738, -2.701357, 2.5398617, 0.22682738, -6.201357, 0.03986168, 0.22682738, 1.2986431, 0.03986168, 0.22682738, 2.048643, 0.7898617, 0.22682738, 2.048643, 0.7898617, 0.22682738, -1.2013569, -2.2101383, 0.22682738, -1.2013569, -2.2101383, 0.22682738, 0.5486431, -1.2101383, 0.22682738, 0.5486431, 1.7898617, 2.1268272, 1.5486431, 1.7898617, 2.1268272, 2.798643, 2.5398617, 2.1268272, 2.798643, 2.5398617, 2.1268272, 1.5486431)
@@ -20,43 +21,60 @@ cell_height = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mg7ic"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4sr6x"]
+size = Vector3(1.0898438, 1, 7.405884)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nm12e"]
+size = Vector3(2, 1.5307007, 2.2578125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxrxu"]
+
 [node name="StartingLevel" type="Node3D"]
 script = ExtResource("1_vjoyf")
+
+[node name="LevelController" parent="." node_paths=PackedStringArray("end_trigger") instance=ExtResource("12_4sr6x")]
+cutscene_path = "res://scenes/cutscene/cutscene.tscn"
+next_level_path = "res://scenes/levels/level_2/level_2.tscn"
+is_starting_level = true
+end_trigger = NodePath("../NavigationRegion3D/JunctionRoom/Objects/Interactable/ElectricPanel")
+
+[node name="EndCamera" parent="LevelController" index="0"]
+transform = Transform3D(0.01570728, 0.045357395, -0.9988473, 0, 0.99897057, 0.04536299, 0.9998766, -0.00071252923, 0.01569111, 14.137, -1.647, -9.351)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_e6bok")
 
-[node name="starting_area" parent="." instance=ExtResource("1_u0ng2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
-
-[node name="long_hallway_with_bathroom" parent="." instance=ExtResource("2_p70ti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.012879372)
-
-[node name="LivingRoom" parent="." instance=ExtResource("3_p70ti")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
-
-[node name="FrontHall" parent="." instance=ExtResource("4_fuxs2")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)
-
-[node name="StairWell" parent="." instance=ExtResource("5_wn3j4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.7582, -1.316661, -19.75122)
-
-[node name="StorageRoom" parent="." instance=ExtResource("6_xlana")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.422617)
-
 [node name="JunctionRoom" parent="NavigationRegion3D" instance=ExtResource("7_lfrea")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.694659, -2.9583678, -9.4564905)
 
-[node name="BossAi" parent="NavigationRegion3D" instance=ExtResource("8_s32hy")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 13.124408, -2.6312466, -8.370862)
+[node name="starting_area" parent="NavigationRegion3D" instance=ExtResource("1_u0ng2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07320666, -0.21048337, -0.23329592)
+
+[node name="long_hallway_with_bathroom" parent="NavigationRegion3D" instance=ExtResource("2_p70ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21224695, 0.115170956)
+
+[node name="LivingRoom" parent="NavigationRegion3D" instance=ExtResource("3_p70ti")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.839, -0.209, -29.707)
+
+[node name="FrontHall" parent="NavigationRegion3D" instance=ExtResource("4_fuxs2")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.270271, -0.20503712, -11.506582)
+
+[node name="StairWell" parent="NavigationRegion3D" instance=ExtResource("5_wn3j4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.7582, -1.316661, -19.75122)
+
+[node name="StorageRoom" parent="NavigationRegion3D" instance=ExtResource("6_xlana")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.422617)
 
 [node name="MainMenuCanvasLayer" parent="." instance=ExtResource("10_4sr6x")]
 
 [node name="Camera3D" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
 transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.7062898, 1.463085, 1.5289761)
 
+[node name="Title" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer" index="0"]
+text = "Synchronization"
+
 [node name="PC2" parent="." instance=ExtResource("10_ydyic")]
-transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.7450578, 1.186066, 2.35408)
+transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.6435325, 1.0316298, 2.4173863)
 
 [node name="top_left" type="Marker3D" parent="PC2/Monitor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.552835, 2.1371083, 0.22655869)
@@ -64,22 +82,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.552835, 2.1371083, 0.22655
 [node name="bot_right" type="Marker3D" parent="PC2/Monitor" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5350685, 0.26178837, 0.114336014)
 
-[node name="LevelController" parent="." node_paths=PackedStringArray("end_trigger") instance=ExtResource("12_4sr6x")]
-is_starting_level = true
-end_trigger = NodePath("../Area3D")
+[node name="LivingRoomLight" parent="." instance=ExtResource("12_mg7ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.443323, 1.7276286, -17.386856)
+light_energy = 0.5
+light_indirect_energy = 0.21
+omni_shadow_mode = 0
 
-[node name="Camera3D" parent="LevelController" index="0"]
-transform = Transform3D(0.999451, -0.004981823, 0.032755837, 0, 0.98863125, 0.15036057, -0.033132512, -0.150278, 0.9880885, 1.7174067, 0.0037674904, -7.8005347)
+[node name="Area3D_END" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6880133, 3.5342689, -9.375571)
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5419278, 0.5475464, -9.303559)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_END"]
 shape = SubResource("BoxShape3D_mg7ic")
 
-[connection signal="pressed" from="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[node name="BedroomLight" parent="." groups=["light"] instance=ExtResource("12_mg7ic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191, 1.429, 0.323)
+light_color = Color(0.9098039, 1, 1, 1)
+light_energy = 0.7
 
+[node name="Area3D_LightTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.494461)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_LightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044921875, 0.7002549, -15.053923)
+shape = SubResource("BoxShape3D_4sr6x")
+
+[node name="Audio_Whispers" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-0.9922387, 0.024162423, -0.12197783, 0, 0.9809396, 0.194313, 0.124347955, 0.19280487, -0.9733262, 8.112611, -1.7679758, -10.474346)
+stream = ExtResource("13_mg7ic")
+volume_db = -10.0
+max_db = 1.0
+pitch_scale = 0.7
+
+[node name="Area3D_WhisperTrigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_WhisperTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.18555, -1.4981626, -22.701044)
+shape = SubResource("BoxShape3D_nm12e")
+
+[node name="Area3D_HintPrompt" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3927433, 0.63366354, -2.1660213)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_HintPrompt"]
+shape = SubResource("BoxShape3D_xxrxu")
+
+[connection signal="on_door_opened" from="NavigationRegion3D/JunctionRoom/Objects/Interactable/DoorNode/Door" to="." method="_on_door_opened"]
+[connection signal="pressed" from="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="body_entered" from="Area3D_LightTrigger" to="." method="_on_area_3d_light_trigger_body_entered"]
+[connection signal="body_entered" from="Area3D_WhisperTrigger" to="." method="_on_area_3d_whisper_trigger_body_entered"]
+[connection signal="body_entered" from="Area3D_HintPrompt" to="." method="_on_area_3d_hint_prompt_body_entered"]
+
+[editable path="LevelController"]
+[editable path="NavigationRegion3D/JunctionRoom"]
 [editable path="MainMenuCanvasLayer"]
 [editable path="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings"]
 [editable path="PC2"]
-[editable path="LevelController"]

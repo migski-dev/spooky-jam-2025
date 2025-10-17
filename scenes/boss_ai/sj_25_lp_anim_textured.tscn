@@ -1,5 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://djuqsbj2ebb01"]
+[gd_scene load_steps=5 format=3 uid="uid://djuqsbj2ebb01"]
 
 [ext_resource type="PackedScene" uid="uid://dvdx1qdfejobu" path="res://assets/models/MOB/SJ25_LP_ANIM_TEXTURED.glb" id="1_r7xgm"]
+[ext_resource type="Shader" uid="uid://d2qp54lpf2587" path="res://shaders/ps_model_shader.gdshader" id="2_pcjw4"]
+[ext_resource type="Texture2D" uid="uid://bld5nrf2ya4qw" path="res://assets/models/MOB/SJ25_LP_ANIM_TEXTURED_Material.png" id="3_jgpy0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_axwxh"]
+render_priority = 0
+shader = ExtResource("2_pcjw4")
+shader_parameter/albedo_texture = ExtResource("3_jgpy0")
+shader_parameter/texture_tile = Vector2(1, 1)
+shader_parameter/snap_enabled = true
+shader_parameter/snap_resolution = 148.0
+shader_parameter/affine_weight = 0.1
 
 [node name="SJ25_LP_ANIM_TEXTURED" instance=ExtResource("1_r7xgm")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.23412848, 1.4658957, -144.5373)
+bones/0/rotation = Quaternion(-0.5048354, -0.50241375, 0.49733183, 0.49536118)
+bones/1/rotation = Quaternion(0.0012647411, 0.0013609352, -0.27499202, 0.9614448)
+bones/2/position = Vector3(-9.367941e-06, 23.269634, 3.3155084e-07)
+bones/2/rotation = Quaternion(0.0074495617, 0.0048054475, -0.17470041, 0.9845817)
+bones/3/position = Vector3(-1.6296575e-05, 26.593918, -2.1873376e-08)
+bones/3/rotation = Quaternion(0.007496991, 0.004414125, -0.10968753, 0.9939281)
+bones/4/position = Vector3(1.9441042e-05, 29.918133, 5.395246e-07)
+bones/4/rotation = Quaternion(0.0019643984, -0.007822453, 0.10760713, 0.9941608)
+bones/5/rotation = Quaternion(-0.01743569, 0.023675285, 0.18870571, 0.98159343)
+bones/7/position = Vector3(0.6006222, 27.21535, -11.615433)
+bones/7/rotation = Quaternion(-0.21335232, -0.75797564, 0.61614233, 0.017958561)
+bones/8/position = Vector3(-1.38341275e-05, 22.809568, 4.6698333e-06)
+bones/8/rotation = Quaternion(0.23267841, -0.3339453, 0.2681064, 0.87318975)
+bones/9/position = Vector3(-2.0715324e-05, 70.791725, 3.7598584e-06)
+bones/9/rotation = Quaternion(-0.012278054, 0.33668277, 0.46064603, 0.8211572)
+bones/10/position = Vector3(1.7880669e-07, 33.76072, 5.7220627e-06)
+bones/11/position = Vector3(0.8621589, 27.287054, 11.615433)
+bones/11/rotation = Quaternion(0.62388283, -0.028360136, -0.18823127, 0.7579809)
+bones/12/position = Vector3(-1.8500832e-05, 22.809566, 3.7849838e-06)
+bones/12/rotation = Quaternion(0.22344384, 0.8730718, 0.31378886, -0.29892308)
+bones/13/position = Vector3(1.5554272e-06, 70.83694, 1.2625768e-05)
+bones/13/rotation = Quaternion(-0.55092657, 0.81844944, 0.08028917, 0.14203556)
+bones/14/position = Vector3(-3.814698e-06, 33.715115, 1.9073395e-06)
+bones/15/position = Vector3(0.40973082, -10.697958, -24.054796)
+bones/15/rotation = Quaternion(0.0744335, -0.19774957, 0.9245922, -0.31699228)
+bones/16/position = Vector3(-5.0961726e-06, 85.133316, 1.900205e-06)
+bones/16/rotation = Quaternion(0.047826603, 0.026950914, -0.5604952, 0.82633615)
+bones/17/rotation = Quaternion(0.50721943, -0.5117396, 0.448367, 0.5289785)
+bones/18/rotation = Quaternion(0.27079, -0.0011792071, -0.09911888, 0.9575212)
+bones/20/position = Vector3(0.4856464, -10.69797, 24.054798)
+bones/20/rotation = Quaternion(-0.15537465, 0.14709264, 0.92151594, -0.32408494)
+bones/21/position = Vector3(1.3208246e-05, 85.11273, 2.4078913e-06)
+bones/21/rotation = Quaternion(0.028674243, -0.07858396, -0.55916345, 0.82482636)
+bones/22/rotation = Quaternion(0.44390547, -0.48994437, 0.5118823, 0.5485244)
+bones/23/rotation = Quaternion(0.27837947, 0.09558371, 0.10275348, 0.95016336)
+
+[node name="SJ25_LOWPOLY" parent="Armature/Skeleton3D" index="0"]
+material_override = SubResource("ShaderMaterial_axwxh")

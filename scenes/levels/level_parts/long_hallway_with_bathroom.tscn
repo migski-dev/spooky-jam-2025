@@ -1,10 +1,14 @@
-[gd_scene load_steps=39 format=3 uid="uid://c0h5tto614wwn"]
+[gd_scene load_steps=51 format=3 uid="uid://c0h5tto614wwn"]
 
+[ext_resource type="Texture2D" uid="uid://do5xleqph28rl" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/512/Color Maps (My PSX Collection Brightness)/wood_pt_3_1.png" id="1_ajd26"]
 [ext_resource type="PackedScene" uid="uid://c06s8tdpcvr1f" path="res://assets/models/Free 3D Modular Game Assets For Prototyping/Pieces/door.fbx" id="1_r6in5"]
 [ext_resource type="PackedScene" uid="uid://dgyfblco8ojer" path="res://scenes/interactables/door/door.tscn" id="1_w2e7j"]
+[ext_resource type="Texture2D" uid="uid://b7hdblv4x41kw" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/512/Normal Maps/wood_pt_3_1_normal.png" id="2_hf35a"]
 [ext_resource type="PackedScene" uid="uid://r42ra5jct0gw" path="res://assets/models/Free 3D Modular Game Assets For Prototyping/Pieces/window.fbx" id="2_w2e7j"]
+[ext_resource type="Texture2D" uid="uid://dctwqp06x888" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/tiles_floor_pt_3.png" id="3_igdpp"]
 [ext_resource type="PackedScene" uid="uid://6biu8vnsle2y" path="res://assets/models/Low Poly Furniture/Tables/Table A.fbx" id="3_qwuyy"]
 [ext_resource type="PackedScene" uid="uid://bv2jop5eht4g7" path="res://scenes/objects/glass.tscn" id="4_sv3lc"]
+[ext_resource type="Texture2D" uid="uid://dciyigfd85qtg" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Normal Maps/tiles_floor_pt_3_normal.png" id="4_wkwks"]
 [ext_resource type="PackedScene" uid="uid://c0u2yupjgkdhn" path="res://assets/models/Low Poly Furniture/Miscellaneous/Curtains.fbx" id="5_xx2vm"]
 [ext_resource type="PackedScene" uid="uid://b68nrpewmjr8h" path="res://assets/models/Low Poly Furniture/Carpets/Carpet B.fbx" id="7_3l3gu"]
 [ext_resource type="PackedScene" uid="uid://bkf3ko3ndli4j" path="res://assets/models/Low Poly Furniture/Bathroom/Shower.fbx" id="7_8m1vg"]
@@ -16,14 +20,36 @@
 [ext_resource type="PackedScene" uid="uid://bns0lpayklim" path="res://assets/models/Low Poly Furniture/Bathroom/Toilet Roll Holder.fbx" id="14_etdkd"]
 [ext_resource type="PackedScene" uid="uid://dnen7k4hkxc80" path="res://assets/models/Low Poly Furniture/Drawers/Drawer B.fbx" id="15_ajd26"]
 [ext_resource type="PackedScene" uid="uid://dpa2whxpe8ys2" path="res://assets/models/Low Poly Furniture/Miscellaneous/Mirror B.fbx" id="15_kbo1x"]
+[ext_resource type="Texture2D" uid="uid://c6qt41pc1ys48" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/old_wallpaper_wall_pt_2.png" id="16_dj7ad"]
 [ext_resource type="PackedScene" uid="uid://buva62htjn6y4" path="res://assets/models/Low Poly Furniture/Miscellaneous/Bin.fbx" id="16_hf35a"]
+[ext_resource type="Texture2D" uid="uid://nphvbo4srrjc" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Normal Maps/old_wallpaper_wall_pt_2_normal.png" id="17_etdkd"]
 [ext_resource type="PackedScene" uid="uid://gunymj3nc7c0" path="res://assets/models/Low Poly Furniture/Bathroom/Bath.fbx" id="17_igdpp"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sv3lc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igdpp"]
+albedo_texture = ExtResource("1_ajd26")
+normal_enabled = true
+normal_texture = ExtResource("2_hf35a")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wkwks"]
+material = SubResource("StandardMaterial3D_igdpp")
 size = Vector3(12, 0.25, 15.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r6in5"]
 data = PackedVector3Array(-6, 0.125, 7.75, 6, 0.125, 7.75, -6, -0.125, 7.75, 6, 0.125, 7.75, 6, -0.125, 7.75, -6, -0.125, 7.75, 6, 0.125, -7.75, -6, 0.125, -7.75, 6, -0.125, -7.75, -6, 0.125, -7.75, -6, -0.125, -7.75, 6, -0.125, -7.75, 6, 0.125, 7.75, 6, 0.125, -7.75, 6, -0.125, 7.75, 6, 0.125, -7.75, 6, -0.125, -7.75, 6, -0.125, 7.75, -6, 0.125, -7.75, -6, 0.125, 7.75, -6, -0.125, -7.75, -6, 0.125, 7.75, -6, -0.125, 7.75, -6, -0.125, -7.75, 6, 0.125, 7.75, -6, 0.125, 7.75, 6, 0.125, -7.75, -6, 0.125, 7.75, -6, 0.125, -7.75, 6, 0.125, -7.75, -6, -0.125, 7.75, 6, -0.125, 7.75, -6, -0.125, -7.75, 6, -0.125, 7.75, 6, -0.125, -7.75, -6, -0.125, -7.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlsmj"]
+albedo_texture = ExtResource("3_igdpp")
+normal_enabled = true
+normal_texture = ExtResource("4_wkwks")
+uv1_scale = Vector3(4, 10, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxn31"]
+material = SubResource("StandardMaterial3D_jlsmj")
+size = Vector3(12, 0.25, 15.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sv3lc"]
+size = Vector3(12, 0.25, 15.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kbo1x"]
 size = Vector3(0.67626953, 1.185669, 0.84680176)
@@ -46,7 +72,14 @@ size = Vector3(1.3389587, 2.62257, 0.65931755)
 [sub_resource type="BoxShape3D" id="BoxShape3D_igdpp"]
 size = Vector3(1.3966904, 2.62257, 0.38227108)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajd26"]
+albedo_texture = ExtResource("16_dj7ad")
+normal_enabled = true
+normal_texture = ExtResource("17_etdkd")
+uv1_scale = Vector3(3, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_ikbsm"]
+material = SubResource("StandardMaterial3D_ajd26")
 size = Vector3(0.5, 2.5, 6.1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sv3lc"]
@@ -55,7 +88,14 @@ points = PackedVector3Array(-0.25, -1.25, -3, 0.25, -1.25, -3, -0.25, -1.25, 3, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xx2vm"]
 points = PackedVector3Array(-0.25, -1.25, -3, 0.25, -1.25, -3, -0.25, -1.25, 3, -0.25, 1.25, -3, 0.25, 1.25, -3, 0.25, -1.25, 3, -0.25, 1.25, 3, 0.25, 1.25, 3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hf35a"]
+albedo_texture = ExtResource("16_dj7ad")
+normal_enabled = true
+normal_texture = ExtResource("17_etdkd")
+uv1_scale = Vector3(3, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_qwuyy"]
+material = SubResource("StandardMaterial3D_hf35a")
 size = Vector3(0.5, 2.5, 6)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikbsm"]
@@ -83,7 +123,7 @@ data = PackedVector3Array(-0.01, 0, 0.02, -0.01, -0.01, 0.02, -0.01, -0.01, 0, -
 
 [node name="Hall_Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2424786, 0, 0, 0, 1, 0, 0, 0, 0.9024391, -1.3003801, 0, -9.148223)
-mesh = SubResource("BoxMesh_sv3lc")
+mesh = SubResource("BoxMesh_wkwks")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hall_Floor"]
 
@@ -92,7 +132,7 @@ shape = SubResource("ConcavePolygonShape3D_r6in5")
 
 [node name="Bathroom_Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2424786, 0, 0, 0, 1, 0, 0, 0, 0.9024391, 1.6093853, 0, -9.148223)
-mesh = SubResource("BoxMesh_sv3lc")
+mesh = SubResource("BoxMesh_nxn31")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathroom_Floor"]
 
@@ -167,7 +207,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.7945276, 0.2895183
 transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.15, 0, -0.2, 0, -8.742278e-09, 2.7551913, 0.5573136, -0.33044434)
 
 [node name="Mirror B" parent="Objects/Static" instance=ExtResource("15_kbo1x")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.1535016, 1.4845389, -3.1933718)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.1535016, 1.5551461, -3.1933718)
 
 [node name="CollisionZones" type="StaticBody3D" parent="Objects"]
 

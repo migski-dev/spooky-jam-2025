@@ -12,11 +12,6 @@ func _on_play_button_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().get_first_node_in_group("player").flashlight.visible = false
 
-	
-	
-	
-	
-
 
 func _on_settings_button_pressed():
 	$AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/Settings.visible = true

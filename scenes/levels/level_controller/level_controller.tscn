@@ -5,7 +5,7 @@
 [node name="LevelController" type="Node3D"]
 script = ExtResource("1_e3pa7")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="EndCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.999451, -0.004981823, 0.032755837, 0, 0.98863125, 0.15036057, -0.033132512, -0.150278, 0.9880885, 0.38461992, 1.7655377, 11.602162)
 
 [node name="StartPosition" type="Marker3D" parent="."]

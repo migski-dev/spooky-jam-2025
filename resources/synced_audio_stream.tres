@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=4 format=3 uid="uid://b5e20qlshyx0v"]
+
+[ext_resource type="AudioStream" uid="uid://bt3ixoeyugj6p" path="res://assets/bgm/Layer 1 - AI Encounter.ogg" id="1_vdju8"]
+[ext_resource type="AudioStream" uid="uid://b12d2kmp2flus" path="res://assets/bgm/Layer 2 - AI Encounter.ogg" id="2_m0qrq"]
+[ext_resource type="AudioStream" uid="uid://gj5ak0i2ote6" path="res://assets/bgm/Layer 3 - AI Encounter.ogg" id="3_5jkt4"]
+
+[resource]
+stream_count = 3
+stream_0/stream = ExtResource("1_vdju8")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_m0qrq")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_5jkt4")
+stream_2/volume = 0.0

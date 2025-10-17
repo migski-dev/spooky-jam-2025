@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c5j6arvjwdt6m"
+path="res://.godot/imported/Tweak Cue w_ tail.ogg-e6134b946f198b9da429d1c6913bb1fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/Tweak Cue w_ tail.ogg"
+dest_files=["res://.godot/imported/Tweak Cue w_ tail.ogg-e6134b946f198b9da429d1c6913bb1fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

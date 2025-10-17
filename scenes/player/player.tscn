@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ipohujquxte"]
+[gd_scene load_steps=13 format=3 uid="uid://c1ipohujquxte"]
 
 [ext_resource type="Script" uid="uid://b72a6qxj3qu8" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://bec3dmcyb8fn7" path="res://assets/textures/Test_InteractKey/E_key.png" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://ckcrv1edways8" path="res://scenes/player/interaction_ui.gd" id="2_gmlin"]
 [ext_resource type="Shader" uid="uid://cfvby818xl5od" path="res://shaders/alpha_video.gdshader" id="3_lvxji"]
-[ext_resource type="VideoStream" uid="uid://ccwrdlqmmp3cl" path="res://assets/videos/hand_test.ogv" id="4_p47bc"]
+[ext_resource type="VideoStream" uid="uid://b2q8w0deqlas" path="res://assets/videos/ALPHA_BLACK.ogv" id="4_75vfm"]
 [ext_resource type="PackedScene" uid="uid://c753ubucfcogs" path="res://scenes/ui/hint_ui/hint_ui.tscn" id="6_75vfm"]
+[ext_resource type="AudioStream" uid="uid://b5e20qlshyx0v" path="res://resources/synced_audio_stream.tres" id="7_qek5x"]
+[ext_resource type="Script" uid="uid://p32hhklbpg4r" path="res://scenes/player/bgm_audio.gd" id="8_5gtgg"]
+[ext_resource type="AudioStream" uid="uid://dt55ey7w5vnk" path="res://assets/bgm/Ambience Track loop.ogg" id="9_5gtgg"]
+[ext_resource type="AudioStream" uid="uid://c5j6arvjwdt6m" path="res://assets/sfx/Tweak Cue w_ tail.ogg" id="9_h17s1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8afob"]
 radius = 0.49975586
@@ -13,7 +17,7 @@ height = 0.9995117
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
 shader = ExtResource("3_lvxji")
-shader_parameter/chroma_key_color = Color(0.5, 1, 0, 1)
+shader_parameter/chroma_key_color = Color(0, 0, 0, 1)
 shader_parameter/pickup_range = 0.1
 shader_parameter/fade_amount = 0.0
 
@@ -30,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35420495, 0.063)
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2272942, -0.53779554)
 visible = false
-light_color = Color(0.99999994, 0.9607071, 0.7778217, 1)
+light_color = Color(1, 0.9607843, 0.7764706, 1)
 light_energy = 7.0
 light_indirect_energy = 0.1
 light_volumetric_fog_energy = 0.1
@@ -40,7 +44,7 @@ shadow_enabled = true
 shadow_bias = 1.657
 shadow_normal_bias = 2.206
 shadow_blur = 6.052
-spot_range = 10.0
+spot_range = 239.909
 spot_attenuation = 2.5
 spot_angle_attenuation = 3.0
 
@@ -48,6 +52,7 @@ spot_angle_attenuation = 3.0
 layer = 0
 
 [node name="InteractionUI" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,8 +69,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("4_p47bc")
+stream = ExtResource("4_75vfm")
+speed_scale = 2.0
 autoplay = true
+expand = true
 
 [node name="InteracableObjectUI" type="Control" parent="UI"]
 visible = false
@@ -102,6 +109,14 @@ vertical_alignment = 1
 
 [node name="HintUI" parent="UI" instance=ExtResource("6_75vfm")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AI_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qek5x")
+script = ExtResource("8_5gtgg")
+
+[node name="Tweak_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_h17s1")
+
+[node name="Ambiance_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_5gtgg")
 
 [connection signal="finished" from="UI/InteractionUI/VideoStreamPlayer" to="UI/InteractionUI" method="_on_video_stream_player_finished"]

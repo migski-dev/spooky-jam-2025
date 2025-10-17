@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Chair A.fbx-503364b8ae848b3b6cd826572515cc24.
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
