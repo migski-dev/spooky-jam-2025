@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 CameraManager="*res://autoload/camera_manager/camera_manager.tscn"
 SignalBus="*res://autoload/signal_bus/signal_bus.tscn"
 AudioManager="*res://autoload/audio_manager/audio_manager.tscn"
+GameOver="*res://scenes/ui/game_over_menu/game_over_canvas_layer.tscn"
 
 [display]
 

@@ -7,7 +7,18 @@ class_name Main
 @onready var settings_menu = $Settings
 @onready var in_main_menu = true
 var window_has_focus = true
+var player_starting_position
+var player_rotation
 
+
+func _ready() -> void:
+	#prep game over
+	player_starting_position = $Player.global_position
+	player_rotation = $Player.rotation
+	
+	GameOver.on_transition_finished.connect(reload)
+	GameOver.on_transition_started.connect(on_game_over)
+	GameOver.on_quit.connect(alt_f4)
 
 func _notification(what: int) -> void:
 	match what:
@@ -51,3 +62,18 @@ func exit_settings_menu():
 		return
 	settings_menu.hide()
 	pause_menu.show()
+
+func on_game_over():
+	Engine.time_scale = 0
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+func reload():
+	Engine.time_scale = 1
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#GameOver.animation_player.play("fade_to_normal")
+	#$StartingLevel.reload()
+	#$Player.position = player_starting_position
+	#$Player.rotation = player_rotation
+
+func alt_f4():
+	get_tree().quit(0)

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkpyf20xapi5" path="res://scenes/levels/level_parts/junction_room_1.tscn" id="7_lfrea"]
 [ext_resource type="PackedScene" uid="uid://wishy0tw4j76" path="res://scenes/ui/main_menu/main_menu_canvas_layer.tscn" id="10_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dqh1s5mat22da" path="res://scenes/objects/pc/pc_2.tscn" id="10_ydyic"]
+[ext_resource type="PackedScene" uid="uid://cdchf4uo2kaln" path="res://scenes/ui/game_over_menu/game_over_canvas_layer.tscn" id="11_nm12e"]
 [ext_resource type="PackedScene" uid="uid://dxktpdgqfjp1e" path="res://scenes/levels/level_controller/level_controller.tscn" id="12_4sr6x"]
 [ext_resource type="PackedScene" uid="uid://dmn1xixfenpy3" path="res://scenes/objects/flickering_light/flickering_light.tscn" id="12_mg7ic"]
 [ext_resource type="AudioStream" uid="uid://dnstgrdtr58o6" path="res://assets/sfx/four_voices_whispering-6943.ogg" id="13_mg7ic"]
@@ -72,6 +73,7 @@ transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.
 
 [node name="Title" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer" index="0"]
 text = "Synchronization"
+[node name="GameOverCanvasLayer" parent="." instance=ExtResource("11_nm12e")]
 
 [node name="PC2" parent="." instance=ExtResource("10_ydyic")]
 transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.6435325, 1.0316298, 2.4173863)

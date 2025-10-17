@@ -1,7 +1,6 @@
-[gd_scene load_steps=73 format=4 uid="uid://bdx4x7ygyd3oo"]
+[gd_scene load_steps=74 format=4 uid="uid://bdx4x7ygyd3oo"]
 
 [ext_resource type="Material" uid="uid://c88x03e3j7dtc" path="res://assets/materials/flooring.tres" id="1_cntjv"]
-[ext_resource type="PackedScene" uid="uid://0n7cygdomhdi" path="res://scenes/objects/gray_box_furniture.tscn" id="1_cppmt"]
 [ext_resource type="PackedScene" uid="uid://bv2jop5eht4g7" path="res://scenes/objects/glass.tscn" id="2_b20ro"]
 [ext_resource type="PackedScene" uid="uid://bcnwshpgowc02" path="res://assets/models/Low Poly Furniture/Miscellaneous/Speaker.fbx" id="2_gf2xa"]
 [ext_resource type="PackedScene" uid="uid://datl22wqd8c0h" path="res://assets/models/Low Poly Furniture/Shelves/Shelf D.fbx" id="2_p1ryi"]
@@ -30,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://cjeuiec2fvrfd" path="res://assets/models/Low Poly Furniture/Kitchen/Cupboard F.fbx" id="27_oarte"]
 [ext_resource type="PackedScene" uid="uid://cnxy38p55o841" path="res://assets/models/Low Poly Furniture/Kitchen/Blender.fbx" id="28_uvp36"]
 [ext_resource type="PackedScene" uid="uid://5dg14nyt5fnq" path="res://assets/models/Low Poly Furniture/Kitchen/Dishwasher.fbx" id="29_0m84d"]
+[ext_resource type="PackedScene" uid="uid://bou2s8aqli8qo" path="res://assets/models/Low Poly Furniture/Miscellaneous/Vase.fbx" id="29_ld0eh"]
+[ext_resource type="PackedScene" uid="uid://kavhypet3y2" path="res://assets/models/Low Poly Furniture/Miscellaneous/Mug.fbx" id="31_5tvjf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ld0eh"]
 material = ExtResource("1_cntjv")
@@ -236,10 +237,6 @@ shape = SubResource("ConcavePolygonShape3D_h16oo")
 
 [node name="Furniture" type="Node3D" parent="."]
 
-[node name="GrayBox_Furniture5" parent="Furniture" instance=ExtResource("1_cppmt")]
-transform = Transform3D(0.03999999, 0, 0, 0, 0.6, 0, 0, 0, 1.1999998, 16.773817, 2.2500112, -8.514692)
-label_text = "Painting"
-
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="Interactable" type="Node3D" parent="Objects"]
@@ -440,6 +437,9 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 2.6022863, 1.2178894
 
 [node name="Dishwasher" parent="Objects/Static" instance=ExtResource("29_0m84d")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 2.4280326, 0.48698306, -5.975833)
+
+[node name="Vase" parent="Objects/Static" instance=ExtResource("29_ld0eh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 16.580757, 1.7868881, -8.083324)
 
 [node name="CollisionZones" type="StaticBody3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1249537, 0, -10.089476)
@@ -668,6 +668,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Window4/StaticBody3D"]
 transform = Transform3D(1.0000001, 0, -2.1175824e-22, 0, 1.0000001, 3.5527137e-15, -2.1175824e-22, -3.5527137e-15, 1.0000001, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_pa3gh")
+
+[node name="Mug" parent="." instance=ExtResource("31_5tvjf")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 2.8050916, 1.0625418, -8.727836)
 
 [editable path="Objects/Static/Cupboard A"]
 [editable path="Objects/Static/Cupboard A2"]

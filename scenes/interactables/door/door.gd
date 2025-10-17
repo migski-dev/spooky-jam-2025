@@ -29,13 +29,14 @@ func _physics_process(_delta: float) -> void:
 
 #When the player interacts with the object at hand
 func on_interaction_activated():
-	#State-Based-Activation-Logic
-	print("is Interactable Object active? - " + str(activated))
-	if(activated == false):
-		self.global_rotation.y += open_degrees
-		activated = true
-		hint_text = "Close Door"
-	else:
-		self.global_rotation.y -= open_degrees
-		activated = false
-		hint_text = "Open Door"
+	if(player_in_bounds):
+		#State-Based-Activation-Logic
+		print("is Interactable Object active? - " + str(activated))
+		if(activated == false):
+			self.global_rotation.y += open_degrees
+			activated = true
+			hint_text = "Close Door"
+		else:
+			self.global_rotation.y -= open_degrees
+			activated = false
+			hint_text = "Open Door"

@@ -67,3 +67,6 @@ func _on_door_opened():
 func _on_area_3d_hint_prompt_body_entered(body):
 	if body.is_in_group('player'):
 		get_tree().get_first_node_in_group('player').hint_ui.display_hint("Restore Power", "reset breaker in basement")
+	
+func reload():
+	get_tree().reload_current_scene()

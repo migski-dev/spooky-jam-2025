@@ -1,6 +1,5 @@
-[gd_scene load_steps=42 format=3 uid="uid://c6vlcqlqcyphr"]
+[gd_scene load_steps=41 format=3 uid="uid://c6vlcqlqcyphr"]
 
-[ext_resource type="PackedScene" uid="uid://0n7cygdomhdi" path="res://scenes/objects/gray_box_furniture.tscn" id="1_7bf68"]
 [ext_resource type="Texture2D" uid="uid://doew0xc7s307s" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/256/Color Maps/wood_pt_3_1.png" id="1_wsy50"]
 [ext_resource type="Texture2D" uid="uid://b7hdblv4x41kw" path="res://assets/textures/PSX Textures II v1.1/PSX Textures II/512/Normal Maps/wood_pt_3_1_normal.png" id="2_13s0k"]
 [ext_resource type="PackedScene" uid="uid://kcyglmdqpur0" path="res://assets/models/Low Poly Furniture/Tables/Desk.fbx" id="2_fhg8j"]
@@ -160,10 +159,6 @@ transform = Transform3D(0.14142136, 0, 0.14142136, 0, 0.2, 0, -0.14142136, 0, 0.
 
 [node name="Keyboard" parent="Objects/Static" instance=ExtResource("13_wsy50")]
 transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.15, 0, 1.3113417e-08, 0, -0.15, -1.6557955, 1.0126289, 2.3598642)
-
-[node name="GrayBox_Furniture5" parent="Objects/Static" instance=ExtResource("1_7bf68")]
-transform = Transform3D(0.03999999, 0, 0, 0, 0.6, 0, 0, 0, 1.1999997, -2.8079128, 1.3529816, -0.25763178)
-label_text = "Painting"
 
 [node name="Desk" parent="Objects/Static" instance=ExtResource("2_fhg8j")]
 transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -2.056062, 0.6718279, 2.3856938)
