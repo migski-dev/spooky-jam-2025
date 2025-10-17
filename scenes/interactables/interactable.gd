@@ -64,7 +64,7 @@ func on_player_display_ui():
 			player_ref = get_tree().get_first_node_in_group("player")
 	
 	if player_ref and (stop_interacting == false):
-		if(player_in_bounds):
+		if(player_in_bounds == true):
 			#print("showing player ui...")
 			if(!hint_displayed):
 				player_ref.show_interaction(hint_text)
