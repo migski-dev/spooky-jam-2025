@@ -23,3 +23,5 @@ func _process(delta) -> void:
 
 func _on_video_stream_player_finished():
 	is_video_finished = true
+	get_tree().get_first_node_in_group('player').hint_ui.display_hint('TURN ON THE POWER', 'GET TO THE BASEMENT')
+	

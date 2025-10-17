@@ -28,7 +28,6 @@ func _ready() -> void:
 		player.global_position = start_position.global_position
 
 func _on_panel_interacted()-> void:
-	print('adsfasdfkasdlfjasdlfalsdkjfas;ldjfl;ka')
 	if main == null:
 		print_debug('MAIN NOT CONFIGURED ON LEVEL')
 		return

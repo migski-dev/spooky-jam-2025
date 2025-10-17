@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rm7xxm7k8hvc"
+path="res://.godot/imported/Voice Line 5 - Agony.ogg-540747055e01f20fa4776e72b874a32d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/voicelines/Voice Line 5 - Agony.ogg"
+dest_files=["res://.godot/imported/Voice Line 5 - Agony.ogg-540747055e01f20fa4776e72b874a32d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

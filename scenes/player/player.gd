@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 #Parameters -
-#@export var SPEED = 1.7
+#@export var SPEED = 
 @export var SPEED = 8
 @export var MOUSE_SENSITIVITY = 0.003
 const MIN_CAMERA_X_PITCH = deg_to_rad(-80)
@@ -11,6 +11,9 @@ const GRAVITY = 9.8
 #local variables -
 var looking_at_interactable_object : bool = false
 
+@export var random_strength: float = 0.05 
+@export var shake_fade: float = 2.0
+
 @onready var camera = $Camera3D
 @onready var flashlight = $SpotLight3D
 @onready var hint_ui = $UI/HintUI
@@ -18,6 +21,10 @@ var looking_at_interactable_object : bool = false
 @onready var bgm_audio: AudioStreamPlayer = $AI_Audio
 @onready var ambiance_audio: AudioStreamPlayer = $Ambiance_Audio
 
+var rng := RandomNumberGenerator.new()
+var shake_strength: float = 0.0
+
+var tween: Tween
 
 var turned_on_flashlight = false
 
@@ -25,6 +32,7 @@ func _ready():
 	CameraManager.transition_start.connect(_on_transition_start)
 	CameraManager.transition_complete.connect(_on_transition_end)
 	SignalBus.on_game_start.connect(_on_game_start)
+	SignalBus.on_player_hit.connect(_on_player_hit)
 	flashlight.visible = false
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -61,6 +69,10 @@ func _input(event):
 			#Checks for Interactable Objects
 			if result and result.collider.has_signal("player_interaction"):
 				result.collider.emit_signal("player_interaction")
+
+func play_tweak():
+	$Tweak_Audio.play()
+
 
 func _physics_process(delta):
 	
@@ -117,3 +129,21 @@ func start_alpha_video():
 	
 func play_ambiance() -> void:
 	ambiance_audio.play()
+	
+
+func _process(delta):
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+		camera.h_offset = random_offset()
+		camera.v_offset = random_offset()
+
+
+func apply_shake() -> void:
+	shake_strength = random_strength
+
+func random_offset() -> float:
+	return rng.randf_range(-shake_strength, shake_strength)
+	
+func _on_player_hit(): 
+	apply_shake()
+	

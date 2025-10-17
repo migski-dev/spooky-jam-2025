@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clk156yhcaa10"
+path="res://.godot/imported/Voice Line 2 - Synchronization.ogg-76b76dac35f193cfb3efd19ca300ee4c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/voicelines/Voice Line 2 - Synchronization.ogg"
+dest_files=["res://.godot/imported/Voice Line 2 - Synchronization.ogg-76b76dac35f193cfb3efd19ca300ee4c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

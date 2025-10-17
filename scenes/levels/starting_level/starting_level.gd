@@ -64,3 +64,6 @@ func _on_area_3d_whisper_trigger_body_entered(body):
 func _on_door_opened():
 	$Audio_Whispers.stop()
 			
+func _on_area_3d_hint_prompt_body_entered(body):
+	if body.is_in_group('player'):
+		get_tree().get_first_node_in_group('player').hint_ui.display_hint("Restore Power", "reset breaker in basement")

@@ -79,8 +79,3 @@ func set_layer_volume_immediate(layer_index: int, _volume_db: float):
 
 func restart_playback():
 	play(0.0)
-
-func _input(event):
-	if(Input.is_action_just_pressed("Flashlight")):
-		toggle_layer(layer_count)
-		layer_count = layer_count+1

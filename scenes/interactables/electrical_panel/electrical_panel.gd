@@ -38,6 +38,7 @@ func on_interaction_activated():
 			hint_text = "Turn on Breaker"
 			activation_stage = 1
 			player_ref.show_interaction(hint_text)
+			stop_interacting = true
 			on_panel_interacted.emit()
 		1:
 			hint_text = "Close Electrical Panel"

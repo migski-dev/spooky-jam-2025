@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy75vrx8pjfbq"]
+[gd_scene load_steps=19 format=3 uid="uid://cy75vrx8pjfbq"]
 
 [ext_resource type="PackedScene" uid="uid://c6vlcqlqcyphr" path="res://scenes/levels/level_parts/starting_area.tscn" id="1_u0ng2"]
 [ext_resource type="Script" uid="uid://c2n24fl82num3" path="res://scenes/levels/starting_level/starting_level.gd" id="1_vjoyf"]
@@ -26,6 +26,8 @@ size = Vector3(1.0898438, 1, 7.405884)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nm12e"]
 size = Vector3(2, 1.5307007, 2.2578125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxrxu"]
 
 [node name="StartingLevel" type="Node3D"]
 script = ExtResource("1_vjoyf")
@@ -68,6 +70,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.080031, -2.91695, -18.4226
 [node name="Camera3D" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/SubViewport" index="0"]
 transform = Transform3D(-0.999889, -0.0008830817, 0.0148744425, 0, 0.9982423, 0.05926471, -0.014900634, 0.05925813, -0.99813145, -1.7062898, 1.463085, 1.5289761)
 
+[node name="Title" parent="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer" index="0"]
+text = "Synchronization"
+
 [node name="PC2" parent="." instance=ExtResource("10_ydyic")]
 transform = Transform3D(-0.19999999, 0, -1.7484554e-08, 0, 0.19999999, 0, 1.7484554e-08, 0, -0.19999999, -1.6435325, 1.0316298, 2.4173863)
 
@@ -104,7 +109,7 @@ shape = SubResource("BoxShape3D_4sr6x")
 [node name="Audio_Whispers" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(-0.9922387, 0.024162423, -0.12197783, 0, 0.9809396, 0.194313, 0.124347955, 0.19280487, -0.9733262, 8.112611, -1.7679758, -10.474346)
 stream = ExtResource("13_mg7ic")
-volume_db = -0.33
+volume_db = -10.0
 max_db = 1.0
 pitch_scale = 0.7
 
@@ -114,10 +119,17 @@ pitch_scale = 0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.18555, -1.4981626, -22.701044)
 shape = SubResource("BoxShape3D_nm12e")
 
+[node name="Area3D_HintPrompt" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3927433, 0.63366354, -2.1660213)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_HintPrompt"]
+shape = SubResource("BoxShape3D_xxrxu")
+
 [connection signal="on_door_opened" from="NavigationRegion3D/JunctionRoom/Objects/Interactable/DoorNode/Door" to="." method="_on_door_opened"]
 [connection signal="pressed" from="MainMenuCanvasLayer/AspectRatioContainer/SubViewportContainer/Menu/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="body_entered" from="Area3D_LightTrigger" to="." method="_on_area_3d_light_trigger_body_entered"]
 [connection signal="body_entered" from="Area3D_WhisperTrigger" to="." method="_on_area_3d_whisper_trigger_body_entered"]
+[connection signal="body_entered" from="Area3D_HintPrompt" to="." method="_on_area_3d_hint_prompt_body_entered"]
 
 [editable path="LevelController"]
 [editable path="NavigationRegion3D/JunctionRoom"]

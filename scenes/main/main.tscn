@@ -49,6 +49,7 @@ environment = ExtResource("4_6q06x")
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_ow5a4")]
 visible = false
+top_level = true
 
 [node name="Settings" parent="." instance=ExtResource("7_hujxm")]
 visible = false
